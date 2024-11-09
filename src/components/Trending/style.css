@@ -1,0 +1,10 @@
+.tablesTrending {
+  margin: 0 10px 0 0;
+}
+.tablesTrending_button {
+  font-weight: 700;
+  background: #161a1e;
+  width: 30px;
+  padding: 10px;
+  position: absolute;
+}

@@ -1,0 +1,16 @@
+.socialLinks {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  margin: 0 5px;
+}
+.iconscan {
+  width: 15px;
+  height: 15px;
+  fill: #fff;
+}

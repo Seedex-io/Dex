@@ -1,0 +1,34 @@
+.cellContent {
+  font-weight: 500;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #a9b6c8;
+}
+.columnHeaderTitle {
+  font-size: 12px !important;
+}
+
+.doted__text {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.doted__text__dot {
+  margin-right: 8px;
+  font-size: 12px;
+}
+.transactionTable {
+  height: 600px;
+}
+.dataGridroot {
+  margin: 10px 0 5px 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .dataGridroot {
+    margin: 0 3px;
+  }
+}

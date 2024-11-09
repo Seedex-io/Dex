@@ -1,0 +1,7 @@
+.copyText {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #818ea3;
+  margin-bottom: 8px;
+}

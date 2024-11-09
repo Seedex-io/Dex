@@ -1,0 +1,12 @@
+.chips_root {
+  width: 100% !important;
+}
+
+.chips_input {
+  border-radius: 25px !important;
+}
+
+.chips {
+  max-width: 100% !important;
+  margin: 20px !important;
+}

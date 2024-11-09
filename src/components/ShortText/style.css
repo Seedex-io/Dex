@@ -1,0 +1,10 @@
+.shortText__text {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+.shortText__text__dot {
+  margin-right: 8px;
+  font-size: 12px;
+}
