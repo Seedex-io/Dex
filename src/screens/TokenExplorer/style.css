@@ -1,0 +1,147 @@
+.token_explorer {
+  width: calc(100% - 50px);
+  margin-left: auto;
+  padding-left: 20px;
+  margin-bottom: 70px;
+}
+
+.token_explorer_symbol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.token_explorer_symbol_icon {
+  width: 30px;
+  border-radius: 25px;
+}
+
+.token_explorer_symbol_name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.dollar {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff70;
+}
+.token_explorer_volume_usd {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.token_explorer_price_usd {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.token_explorer_price_move {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+}
+
+.token_explorer_up {
+  color: #3aeab5;
+  font-weight: 500;
+}
+
+.token_explorer_down {
+  color: #ff646d;
+  font-weight: 500;
+}
+.token_explorer_price_usd_max {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  width: 100%;
+}
+.token_explorer_price_usd_max_delta {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.token_explorer_token_supply {
+  font-size: 12px;
+}
+
+.token_explorer_holders_count {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+  outline: none !important;
+}
+
+.token_explorer_root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.token_explorer_footer_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff !important;
+  border: none !important;
+}
+.token_explorer_column_separator {
+  display: none !important;
+}
+
+.token_explorer_table_root {
+  border: none !important;
+}
+
+.token_explorer_column_header_title_container,
+.token_explorer_column_headers {
+  border: none !important;
+  color: #ffffff;
+  font-size: 12px;
+  background-color: #161a1e;
+}
+.token_explorer_cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.token_explorer_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.token_explorer_title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  padding-left: 20px;
+}

@@ -1,0 +1,174 @@
+.favourites {
+  margin-left: 50px;
+  margin-top: 115px;
+}
+.favourites_table_container {
+  max-width: 100%;
+}
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  padding: 20px auto;
+  text-align: center;
+}
+.favourites_symbol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.favourites_symbol_name_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+}
+.copyText {
+  margin: 0;
+}
+.shortText__text {
+  font-size: 10px;
+}
+.favourites_symbol_icon {
+  width: 30px;
+  border-radius: 25px;
+}
+
+.favourites_symbol_name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dollar {
+  font-size: 14px;
+  font-weight: 500;
+}
+.favourites_volume_usd {
+  font-size: 14px;
+  font-weight: 500;
+}
+.favourites_price_usd {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.favourites_price_move {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+}
+
+.favourites_up {
+  font-weight: 500;
+}
+
+.favourites_down {
+  font-weight: 500;
+}
+.favourites_price_usd_max {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  width: 100%;
+}
+.favourites_price_usd_max_delta {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.favourites_token_supply {
+  font-size: 12px;
+}
+
+.favourites_holders_count {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+  outline: none !important;
+}
+
+.favourites_root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.favourites_column_separator {
+  display: none !important;
+}
+
+.favourites_table_root {
+  border: none !important;
+}
+
+.favourites_column_header_title_container,
+.favourites_column_headers {
+  border: none !important;
+  font-size: 12px;
+}
+.favourites_cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.favourites_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.favourites_title {
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 20px;
+}
+
+.favourites_delete {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.tooltip {
+  font-size: 14px !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .favourites {
+    width: auto;
+    margin-left: 0;
+    padding-left: 0;
+    padding: 5px;
+  }
+  .favourites_table_container {
+    margin: 0;
+  }
+}

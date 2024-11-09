@@ -1,0 +1,18 @@
+.home {
+  min-height: 100%;
+  margin-left: auto;
+}
+.tickers {
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .tickers {
+    display: block;
+  }
+  .ticker_pairs,
+  .ticker_listed {
+    width: 100%;
+    margin: 10px auto;
+    font-size: 10px;
+  }
+}

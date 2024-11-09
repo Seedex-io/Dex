@@ -1,0 +1,11 @@
+.trending_page {
+  width: auto;
+  margin-left: 50px;
+  margin-top: 115px;
+}
+.trending_page_title {
+  font-size: 32px !important;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+}
