@@ -24,9 +24,6 @@ const themeTransactionTable = {
     '.columnHeaderTitle': {
       color: 'primary.contrastText',
     },
-    '.MuiDataGrid-columnSeparator': {
-      color: 'primary.border',
-    },
     '.MuiDataGrid-cell': {
       borderColor: 'primary.border',
     },

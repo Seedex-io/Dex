@@ -6,9 +6,6 @@
   white-space: nowrap;
   color: #a9b6c8;
 }
-.columnHeaderTitle {
-  font-size: 12px !important;
-}
 
 .doted__text {
   display: flex;
@@ -19,12 +16,6 @@
 .doted__text__dot {
   margin-right: 8px;
   font-size: 12px;
-}
-.transactionTable {
-  height: 600px;
-}
-.dataGridroot {
-  margin: 10px 0 5px 0;
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,10 +1,3 @@
-.token_info {
-  padding: 12px;
-  box-sizing: border-box;
-  margin: 0 5px 0 60px;
-  width: 300px;
-  min-width: 300px;
-}
 .token_info__show_more_buttons {
   display: flex;
   justify-content: space-between;
@@ -14,26 +7,6 @@
   border-top-width: 1px;
   border-top-style: solid;
   padding-top: 15px;
-}
-.token_info__header {
-  width: 100%;
-  padding-top: 20px;
-  box-sizing: border-box;
-}
-
-.token_info__header__title {
-  font-size: 18px;
-  font-weight: 500;
-  display: grid;
-  align-items: center;
-  justify-content: left;
-  grid-template-columns: 1fr 1fr 3fr 1fr;
-}
-
-.token_info__header__logo {
-  width: 25px;
-  height: 25px;
-  border-radius: 100%;
 }
 
 .price24h_list {
@@ -56,18 +29,6 @@
 
 .price24h_itemlist > .span {
   font-weight: 500;
-}
-
-.token_info__header__name {
-  font-size: 16px;
-}
-
-.token_info__header__price {
-  font-size: 22px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: right;
 }
 
 .token_info__changes {
@@ -174,11 +135,3 @@
   margin: 0 10px;
 }
 
-@media screen and (max-width: 1024px) {
-  .token_info {
-    display: block;
-    width: 100%;
-    margin: 0;
-    height: auto;
-  }
-}

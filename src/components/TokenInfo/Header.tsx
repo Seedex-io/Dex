@@ -1,21 +1,16 @@
-import CopyText from '../CopyText';
-import Div from '../SimpleComponents/Div';
 import Social from '../Social';
-import PoolInfoItems from './PoolInfo/PoolInfoItems';
+import Favourite from './Favourite';
 
 export default function Header(props: any) {
   const { token } = props;
   return (
-    <Div className="token_info__header">
-      <PoolInfoItems val={token.name} name="Token Name:" text />
-      <PoolInfoItems val={<CopyText text={token.tokenAddress} />} name="Token:" text />
-      <PoolInfoItems val={<CopyText text={token.pairAddress} />} name="Pair:" text />
-      <PoolInfoItems val={token.mcap} name="Market Cap:" />
-      <PoolInfoItems
-        val={<Social socialLinks={token.links} address={token.token} chain={token.chain} />}
-        name="Socials:"
-        text
-      />
-    </Div>
+    <div className="">
+      <div className='flex w-full flex-wrap items-center justify-between gap-1 px-2.5 sm:px-4 border-[#4c2b52] my-0 border py-1'>
+        <div className='flex items-center gap-1'>
+          <Social socialLinks={token.links} address={token.token} chain={token.chain} />
+        </div>      
+        <Favourite token={token} setToken={props.setToken} />  
+      </div>
+    </div>
   );
 }
