@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import './styles.css';
+import { useEffect, useState } from 'react';
 import TVChartContainer from './TradingView';
 import TokenTransaction from '../TransactionTable';
 import TokenInfo from '../TokenInfo';
 import Loading from '../Loading';
 import Div from '../SimpleComponents/Div';
-import themeChart from './theme';
 import Trending from '../Trending';
 import { BrowserView } from 'react-device-detect';
 import { scanHoneypot } from '../../api/honeyPot';
+
 export default function Chart(props: any) {
   const [token, setToken] = useState<any>(null);
   const [address, setAddress] = useState<any>(null);
@@ -28,10 +27,23 @@ export default function Chart(props: any) {
   }, [address, chain]);
 
   return (
-    <Div className="chart" sx={themeChart.tv}>
+    <div className="relative h-screen w-full border-t border-[#651e6e] flex flex-col md:grid md:grid-cols-[1fr,420px] gap-3 p-2">
       {loading && <Loading />}
 
-      <Div className="tradingview_container" sx={themeChart.tradingview_container}>
+      {/* Left Side: Chart and Transaction Table */}
+      <div className="flex flex-col max-h-full flex-1 overflow-hidden">
+        <div className="flex-grow">
+          {address && (
+            <>
+              <TVChartContainer currency={'USD'} theme={'Dark'} symbol={`${address}`} />
+              <TokenTransaction theme={props.theme} token={token} address={address} />
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* Right Side: Token Info (Scrollable) */}
+      <div className="max-h-full overflow-y-auto">
         <TokenInfo
           theme={props.theme === 'dark'}
           onSetAddress={(address: string, name: string, token: string) => {
@@ -47,18 +59,7 @@ export default function Chart(props: any) {
           }}
           visible={!loading}
         />
-        <Div className="tvwrapper" sx={themeChart.tv}>
-          {address && (
-            <>
-              <TVChartContainer currency={'USD'} theme={'Dark'} symbol={`${address}`} />
-              <TokenTransaction theme={props.theme} token={token} address={address} />
-            </>
-          )}
-        </Div>
-        <BrowserView>
-          <Trending />
-        </BrowserView>
-      </Div>
-    </Div>
+      </div>
+    </div>
   );
 }
