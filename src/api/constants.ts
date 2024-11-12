@@ -2,6 +2,7 @@
 // export const APIToken = 'http://localhost:4000/token';
 export const API = 'https://hidanz.tech/toolsapi/usd';
 export const APIToken = 'https://hidanz.tech/toolsapi/token';
+export const CAPI = 'https://api.coingecko.com/api/v3/coins/';
 
 export const ORIGIN = 'https://allorigins.win';
 

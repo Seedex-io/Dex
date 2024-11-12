@@ -1,8 +1,6 @@
 .token_explorer {
-  width: calc(100% - 50px);
   margin-left: auto;
   padding-left: 20px;
-  margin-bottom: 70px;
 }
 
 .token_explorer_symbol {

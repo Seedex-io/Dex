@@ -68,3 +68,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.text-seedex{
+  color: #f7d4fd !important;
+}

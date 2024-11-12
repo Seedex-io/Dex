@@ -1,8 +1,6 @@
 import { GridColDef } from '@mui/x-data-grid';
 import formatNumberSmaller, { commaFormatted } from '../../utils/helpers/numberFormat';
 import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
-import CopyText from '../../components/CopyText';
-import InitialIcon from '../../components/HelperComponents/InitialIcon';
 import { TimeAgoCell } from '../../components/HelperComponents/TimeAgoCell';
 
 export const columns: GridColDef[] = [

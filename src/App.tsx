@@ -57,7 +57,7 @@ function App() {
         </ThemeProvider>
       </MobileView>
       <BrowserView>
-        <div className="bg-rebrand-patch-one absolute top-0 left-0 h-[300px] w-[300px] opacity-40 mix-blend-plus-lighter blur-[120px]"></div>
+        <div className="bg-rebrand-patch-one absolute  top-0 left-0 h-[300px] w-[300px] opacity-40 mix-blend-plus-lighter blur-[120px]"></div>
         <ThemeProvider theme={theme}>{renderComponent()}</ThemeProvider>
       </BrowserView>
     </>

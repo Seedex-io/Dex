@@ -13,10 +13,14 @@ export default function TokenExplorer(props: any) {
   const [tagIds, setTagIds] = useState([]);
   const [tokens, setTokens] = useState([]);
   const [tokensData, setTokensData] = useState([]);
-  const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
   const [style, setStyle] = useState<any>({
     backgroundColor: props.theme.palette.background.default,
   });
+  const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
+
+  const handleToggleNavbar = (open: boolean) => {
+    setIsNavbarOpen(open);
+  };
 
   useEffect(() => {
     getTagIds().then((data) => {
@@ -239,12 +243,8 @@ export default function TokenExplorer(props: any) {
     },
   ];
 
-  const handleToggleNavbar = (open: boolean) => {
-    setIsNavbarOpen(open);
-  };
-
   return (
-    <div className={`token_explorer ${isNavbarOpen? 'ml-56':'ml-[65px]'}`} style={style}>
+    <div className={`${isNavbarOpen? 'ml-56':'ml-[65px]'}`} style={style}>
       {!props.mobile && <LeftNavbar onToggle={handleToggleNavbar}/>}
       <div className="token_explorer_title">
         <div className="token_explorer_title_text">
