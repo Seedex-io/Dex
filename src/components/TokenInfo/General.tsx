@@ -1,12 +1,11 @@
 import Div from '../SimpleComponents/Div';
 import PoolInfo from './PoolInfo';
-import PriceChange from './PriceChange';
 import SwapTable from './SwapTable';
 import themeTokenInfo from './theme';
 import etherscan from '../../assets/etherscan-logo.webp';
 import { formatNumber, shortNumber } from '../../utils/helpers/numberFormat';
 import { useState } from 'react';
-import { Box, Tabs, Tab } from '@mui/material';
+import { Tabs, Tab } from '@mui/material';
 
 export default function General(props: any) {
   const { token } = props;
@@ -17,27 +16,21 @@ export default function General(props: any) {
     setSelectedTab(newValue);
   };
 
-  // Define the tab data for each period
+  // Define the tab data for each period, including main label and price change with conditional color
   const tabData = [
-    { label: '5m', change: token.price5mChange },
-    { label: '1h', change: token.price1hChange },
-    { label: '6h', change: token.price6hChange },
-    { label: '24h', change: token.price24hChange },
+    { label: '5m', change: token.price5mChange, data: token.txns.m5, volume: token.volume.m5 },
+    { label: '1h', change: token.price1hChange, data: token.txns.h1, volume: token.volume.h1 },
+    { label: '6h', change: token.price6hChange, data: token.txns.h6, volume: token.volume.h6 },
+    { label: '24h', change: token.price24hChange, data: token.txns.h24, volume: token.volume.h24 },
   ];
 
   const renderDescription = () => {
     return (
       <Div className="token_info__description">
-        <Div
-          className="token_info__description__title"
-          sx={themeTokenInfo.token_info__description.title}
-        >
+        <Div className="token_info__description__title" sx={themeTokenInfo.token_info__description.title}>
           {token.name} ({token.symbol})
         </Div>
-        <Div
-          className="token_info__description__text"
-          sx={themeTokenInfo.token_info__description.description}
-        >
+        <Div className="token_info__description__text" sx={themeTokenInfo.token_info__description.description}>
           {token.description ? token.description : 'No description'}
         </Div>
       </Div>
@@ -46,28 +39,98 @@ export default function General(props: any) {
 
   return (
     <>
-      <div className="">
-        <div className="">
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+      <div className="my-2 md:my-3">
+        <div className="bg-[#100113] border-fuchsia-800 flex flex-col gap-3 border-[0.8px] px-1.5 pt-2 pb-2.5 sm:px-2 sm:pt-2.5 sm:pb-3 md:border-0 md:pb-0">
+          <div className="flex items-end bg-[#230a28] px-1 py-1">
             <Tabs value={selectedTab} onChange={handleTabChange} aria-label="price change tabs">
               {tabData.map((tab, index) => (
-                <Tab key={index} label={tab.label} />
+                <Tab
+                  key={index}
+                  label={
+                    <div className={`text-center ${selectedTab === index ? 'text-seedex' : 'text-white'}`}>
+                      <span>{tab.label}</span>
+                      <br />
+                      <span
+                        className={`text-${tab.change >= 0 ? 'green-500' : 'red-500'} text-xs font-medium`}
+                      >
+                        {tab.change >= 0 ? `+${tab.change}%` : `${tab.change}%`}
+                      </span>
+                    </div>
+                  }
+                  className="!p-0"
+                  sx={{
+                    backgroundColor: selectedTab === index ? '#100113' : 'transparent',
+                    transition: 'background-color 0.3s ease',
+                  }}
+                />
               ))}
             </Tabs>
-          </Box>
-          <Box sx={{ p: 3 }}>
-          {tabData.map((tab, index) => (
-            <div
-              key={index}
-              role="tabpanel"
-              hidden={selectedTab !== index}
-            >
-              {selectedTab === index && (
-                <PriceChange change={tab.change} tm={tab.label} />
-              )}
-            </div>
-          ))}
-          </Box>
+          </div>
+
+          <div>
+            {tabData.map((tab, index) => (
+              <div key={index} role="tabpanel" hidden={selectedTab !== index}>
+                {selectedTab === index && (
+                  <>
+                    {/* Displaying token data based on the selected time period */}
+                    <div className="my-1 flex gap-3">
+                      <div className="flex flex-col items-start justify-center gap-3 md:px-1.5">
+                        <div className="font-inter flex items-center gap-1.5 text-[13px] text-white sm:text-sm">
+                          <p className="text-[#9499a9]">TX Count: </p>
+                          <p className="font-medium">{tab.data?.buys + tab.data?.sells || 'N/A'}</p>
+                        </div>
+                        <div className="font-inter flex items-center gap-1.5 text-[13px] text-white sm:text-sm">
+                          <p className="text-[#9499a9]">Vol: </p>
+                          <p className="font-medium">{shortNumber(tab.volume) || 'N/A'}</p>
+                        </div>
+                      </div>
+
+                      <div className="bg-blue-800 flex h-full w-[0.8px]"></div>
+
+                      <div className="flex flex-1 flex-col gap-2 md:px-1.5">
+                        <div className="flex items-center justify-between px-1">
+                          <div className="flex flex-col gap-1">
+                            <p className="text-seedex font-inter text-[13px] sm:text-sm">Buys</p>
+                            <p className="font-inter text-[13px] font-medium text-white sm:text-sm">
+                              {tab.data?.buys || 'N/A'}
+                            </p>
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <p className="text-seedex font-inter text-[13px] sm:text-sm">Sells</p>
+                            <p className="font-inter text-[13px] font-medium text-white sm:text-sm">
+                              {tab.data?.sells || 'N/A'}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Buy/Sell indicator bar */}
+                        <div className="flex items-center gap-0.5">
+                          {(() => {
+                            const totalTransactions = (tab.data?.buys || 0) + (tab.data?.sells || 0);
+                            const buyPercentage = totalTransactions ? (tab.data?.buys / totalTransactions) * 100 : 50;
+                            const sellPercentage = totalTransactions ? (tab.data?.sells / totalTransactions) * 100 : 50;
+
+                            return (
+                              <>
+                                <div
+                                  className="bg-green-600 h-[3px] rounded-tl-full rounded-bl-full"
+                                  style={{ width: `${buyPercentage}%` }}
+                                ></div>
+                                <div
+                                  className="bg-red-500 h-[3px] rounded-tr-full rounded-br-full"
+                                  style={{ width: `${sellPercentage}%` }}
+                                ></div>
+                              </>
+                            );
+                          })()}
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
           <p className='font-inter text-seedex text-sm'>Pair age</p>
