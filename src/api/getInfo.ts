@@ -2,6 +2,8 @@ import axios from 'axios';
 import { getPourcentageChangeBetweenTwoNumbers } from '../utils/calculate';
 import { CAPI, API, ORIGIN } from './constants';
 import { scanHoneypot } from './honeyPot';
+import logo from '../assets/logo.png';
+import { at } from 'lodash';
 
 export const getInfo = async () => {
   const address = window.location.pathname.split('/')[1].split('-')[0];
@@ -108,30 +110,54 @@ export const getInfo = async () => {
     });
 };
 
-export const getPublicInfo = async (tokenAddress: any, chain: any) => {
+export const getPublicInfo = async (tokenAddress: string, chain: string) => {
   const url = `${CAPI}/${chain}/contract/${tokenAddress}`;
 
-  return axios
-    .get(url)
-    .then(async (res: any) => {
-      const val = res.data;
-      console.log(val);
+  try {
+    const res = await axios.get(url);
+    const val = res.data;
 
-      return {
-        maxSupply: val.market_data.max_supply,
-        totalSupply: val.market_data.total_supply,
-        holders: val.market_data.holders, // (not available directly in CoinGecko)
-        txCount: val.market_data.total_transactions, // (not available directly in CoinGecko)
-        description: val.description.en,
-        links: val.links,
-        logo: val.image.large,  // logo is located here in CoinGecko API
-        audit: val.audits, // (if any)
-      };
-    })
-    .catch((err: any) => {
-      console.log(err);
-      return null;
-    });
+    return {
+      maxSupply: val.market_data?.max_supply ?? 'N/A',
+      totalSupply: val.market_data?.total_supply ?? 'N/A',
+      holders: val.market_data?.holders ?? 'N/A',
+      txCount: val.market_data?.total_transactions ?? 'N/A',
+      description: val.description?.en ?? 'No description available',
+      links: val.links ?? {},
+      market_data: {
+        ath: val.market_data?.ath ?? {},
+        athChangePercentage: val.market_data?.ath_change_percentage ?? {},
+        athDate: val.market_data?.ath_date ?? {},
+        atl: val.market_data?.atl ?? {},
+        atlChangePercentage: val.market_data?.atl_change_percentage ?? {},
+        atlDate: val.market_data?.atl_date ?? {},
+      },
+      logo: val.image?.large ?? logo,  // Set a default image if none is available
+      audit: val.audits ?? [],
+    };
+  } catch (err) {
+    console.error("Token info not found in CoinGecko API:", err);
+
+    // Return default values if token info is not found
+    return {
+      maxSupply: 'N/A',
+      totalSupply: 'N/A',
+      holders: 'N/A',
+      txCount: 'N/A',
+      description: 'No description available',
+      links: {},
+      market_data: {
+        ath: {},
+        athChangePercentage: {},
+        athDate: {},
+        atl: {},
+        atlChangePercentage: {},
+        atlDate: {},
+      },
+      logo: logo,  // A default image path if none is found
+      audit: [],
+    };
+  }
 };
 
 
