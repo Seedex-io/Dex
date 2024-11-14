@@ -37,7 +37,7 @@ const Filtermodal: React.FC<FiltermodalProps> = ({ filters, onFilterChange, onAp
     };
 
     return (
-        <div className="bg-[#220b26] border-[#4d2c53] mt-0.5 w-[50rem] max-w-[94vw] border shadow-lg md:mt-1.5">
+        <div className="bg-[#220b26] border-[#4d2c53] mt-0.5 w-[50rem] max-w-[94vw] border shadow-lg md:mt-1.5"  style={{position: 'relative', left: '50%', top: '50%', transform: 'translate(-50%, -50%)',}}>
             <header className="bg-[#2b132e] flex items-center justify-between px-4 py-2">
                 <p className="text-base font-medium text-white">Customize Filters</p>
                 <button onClick={onApply} className="hover:bg-[#220b26] hover:border-[#4d2c53] border border-transparent px-3 py-2.5 text-white transition-all duration-300">
