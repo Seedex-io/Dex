@@ -1,11 +1,8 @@
-import Div from '../SimpleComponents/Div';
-import PoolInfo from './PoolInfo';
-import SwapTable from './SwapTable';
-import themeTokenInfo from './theme';
 import etherscan from '../../assets/etherscan-logo.webp';
 import { formatNumber, shortNumber } from '../../utils/helpers/numberFormat';
 import { useState } from 'react';
 import { Tabs, Tab } from '@mui/material';
+import Safety from './Safety';
 
 export default function General(props: any) {
   const { token } = props;
@@ -26,14 +23,11 @@ export default function General(props: any) {
 
   const renderDescription = () => {
     return (
-      <Div className="token_info__description">
-        <Div className="token_info__description__title" sx={themeTokenInfo.token_info__description.title}>
-          {token.name} ({token.symbol})
-        </Div>
-        <Div className="token_info__description__text" sx={themeTokenInfo.token_info__description.description}>
+      <div className="">
+        <p className="text-sm text-white/95">
           {token.description ? token.description : 'No description'}
-        </Div>
-      </Div>
+        </p>
+      </div>
     );
   };
 
@@ -75,13 +69,13 @@ export default function General(props: any) {
                     {/* Displaying token data based on the selected time period */}
                     <div className="my-1 flex gap-3">
                       <div className="flex flex-col items-start justify-center gap-3 md:px-1.5">
-                        <div className="font-inter flex items-center gap-1.5 text-[13px] text-white sm:text-sm">
+                        <div className="flex items-center gap-1.5 text-[13px] text-white sm:text-sm">
                           <p className="text-[#9499a9]">TX Count: </p>
-                          <p className="font-medium">{tab.data?.buys + tab.data?.sells || 'N/A'}</p>
+                          <p className="font-medium">{tab.data?.buys + tab.data?.sells || 'NAN'}</p>
                         </div>
-                        <div className="font-inter flex items-center gap-1.5 text-[13px] text-white sm:text-sm">
+                        <div className="flex items-center gap-1.5 text-[13px] text-white sm:text-sm">
                           <p className="text-[#9499a9]">Vol: </p>
-                          <p className="font-medium">{shortNumber(tab.volume) || 'N/A'}</p>
+                          <p className="font-medium">{shortNumber(tab.volume) || 'NAN'}</p>
                         </div>
                       </div>
 
@@ -90,14 +84,14 @@ export default function General(props: any) {
                       <div className="flex flex-1 flex-col gap-2 md:px-1.5">
                         <div className="flex items-center justify-between px-1">
                           <div className="flex flex-col gap-1">
-                            <p className="text-seedex font-inter text-[13px] sm:text-sm">Buys</p>
-                            <p className="font-inter text-[13px] font-medium text-white sm:text-sm">
+                            <p className="text-seedex text-[13px] sm:text-sm">Buys</p>
+                            <p className="text-[13px] font-medium text-white sm:text-sm">
                               {tab.data?.buys || 'N/A'}
                             </p>
                           </div>
                           <div className="flex flex-col gap-1">
-                            <p className="text-seedex font-inter text-[13px] sm:text-sm">Sells</p>
-                            <p className="font-inter text-[13px] font-medium text-white sm:text-sm">
+                            <p className="text-seedex text-[13px] sm:text-sm">Sells</p>
+                            <p className="text-[13px] font-medium text-white sm:text-sm">
                               {tab.data?.sells || 'N/A'}
                             </p>
                           </div>
@@ -132,23 +126,89 @@ export default function General(props: any) {
             ))}
           </div>
         </div>
+
+        {/* token info table */}
+        <div className="flex w-full flex-col my-2 md:my-3">
+          <div className="md:bg-[#100113] mt-1 grid grid-cols-3 gap-0 md:mt-0 ">
+            <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-2 px-2.5 sm:py-2">
+              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+                <p className="text-xs ">Market Cap</p>
+              </div>
+              <p className="text-center font-normal text-white">${shortNumber(token.marketCap)  || 'NAN'}</p>
+            </div>
+            <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-t-[0.8px] border-b-[0.8px] py-1.5 px-2.5 sm:py-2">
+              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+                <p className="text-xs">Daily Volume</p>
+              </div>
+              <p className="text-center font-normal text-white">${shortNumber(token.volume24h)  || 'NAN'}</p>
+            </div>
+            <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-1.5 px-2.5 sm:py-2">
+              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+                <p className="text-xs">Liquidity</p>
+              </div>
+              <p className="text-center font-normal text-white">${shortNumber(token.liquidity.usd)  || 'NAN'}</p>
+            </div>
+          </div>
+          <div className="md:bg-[#100113] mt-1 grid grid-cols-3 gap-0 md:mt-0 ">
+            <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-2 px-2.5 sm:py-2">
+              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+                <p className="text-xs ">Holders</p>
+              </div>
+              <p className="text-center font-normal text-white">{token.holders || 'NAN'}</p>
+            </div>
+            <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-t-[0.8px] border-b-[0.8px] py-1.5 px-2.5 sm:py-2">
+              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+                <p className="text-xs">Max Supply</p>
+              </div>
+              <p className="text-center font-normal text-white">{shortNumber(token.maxSupply)  || 'NAN'}</p>
+            </div>
+            <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-1.5 px-2.5 sm:py-2">
+              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+                <p className="text-xs">Total Supply</p>
+              </div>
+              <p className="text-center font-normal text-white">{shortNumber(token.totalSupply)  || 'NAN'}</p>
+            </div>
+          </div>
+          <div className="md:bg-[#100113] mt-1 grid grid-cols-3 gap-0 md:mt-0 ">
+            <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-2 px-2.5 sm:py-2">
+              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+                <p className="text-xs ">FDV</p>
+              </div>
+              <p className="text-center font-normal text-white">${shortNumber(token.fdv)  || 'NAN'}</p>
+            </div>
+            <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-t-[0.8px] border-b-[0.8px] py-1.5 px-2.5 sm:py-2">
+              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+                <p className="text-xs">ATH</p>
+              </div>
+              <p className="text-center font-normal text-white">${formatNumber(token.market_data.ath.usd) || 'NAN'}</p>
+            </div>
+            <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-1.5 px-2.5 sm:py-2">
+              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+                <p className="text-xs">ATL</p>
+              </div>
+              <p className="text-center font-normal text-white">${formatNumber(token.market_data.atl.usd)  || 'NAN'}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Displaying token information */}
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='font-inter text-seedex text-sm'>Pair age</p>
-          <p className='font-azeret text-sm text-white'>{token.creationTime} </p>
+          <p className='text-seedex text-sm'>Pair age</p>
+          <p className='text-sm text-white'>{token.creationTime} </p>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='font-inter text-seedex text-sm'>Pooled {token.baseToken.symbol}</p>
-          <p className='font-azeret text-sm text-white'>{shortNumber(token.reserve)} </p>
+          <p className='text-seedex text-sm'>Pooled {token.baseToken.symbol  || 'NAN'}</p>
+          <p className='text-sm text-white'>{shortNumber(token.reserve)} </p>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='font-inter text-seedex text-sm'>Pooled {token.quoteToken.symbol}</p>
-          <p className='font-azeret text-sm text-white'>{formatNumber(token.reserveRef)} </p>
+          <p className='text-seedex text-sm'>Pooled {token.quoteToken.symbol  || 'NAN'}</p>
+          <p className='text-sm text-white'>{formatNumber(token.reserveRef)} </p>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='font-inter text-seedex text-sm'>{token.baseToken.symbol}</p>
+          <p className='text-seedex text-sm'>{token.baseToken.symbol  || 'NAN'}</p>
           <div className="flex gap-2">
             {/* Address display button */}
-            <button className="font-azeret bg-[#220a26] border-[#651e6e] flex items-center gap-1.5 border px-2 py-0.5 text-xs font-semibold text-white">
+            <button className="bg-[#220a26] border-[#651e6e] flex items-center gap-1.5 border px-2 py-0.5 text-xs font-semibold text-white">
               <p>{token.baseToken.address.slice(0, 6)}...{token.baseToken.address.slice(-6)}</p>
               <svg
                 stroke="currentColor"
@@ -179,10 +239,10 @@ export default function General(props: any) {
           </div>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='font-inter text-seedex text-sm'>{token.quoteToken.symbol}</p>
+          <p className='text-seedex text-sm'>{token.quoteToken.symbol  || 'NAN'}</p>
           <div className="flex gap-2">
             {/* Address display button */}
-            <button className="font-azeret bg-[#220a26] border-[#651e6e] flex items-center gap-1.5 border px-2 py-0.5 text-xs font-semibold text-white">
+            <button className="bg-[#220a26] border-[#651e6e] flex items-center gap-1.5 border px-2 py-0.5 text-xs font-semibold text-white">
               <p>{token.quoteToken.address.slice(0, 6)}...{token.quoteToken.address.slice(-6)}</p>
               <svg
                 stroke="currentColor"
@@ -213,10 +273,10 @@ export default function General(props: any) {
           </div>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='font-inter text-seedex text-sm'>Pair</p>
+          <p className='text-seedex text-sm'>Pair</p>
           <div className="flex gap-2">
             {/* Address display button */}
-            <button className="font-azeret bg-[#220a26] border-[#651e6e] flex items-center gap-1.5 border px-2 py-0.5 text-xs font-semibold text-white">
+            <button className="bg-[#220a26] border-[#651e6e] flex items-center gap-1.5 border px-2 py-0.5 text-xs font-semibold text-white">
               <p>{token.pairAddress.slice(0, 6)}...{token.pairAddress.slice(-6)}</p>
               <svg
                 stroke="currentColor"
@@ -246,9 +306,11 @@ export default function General(props: any) {
             </a>
           </div>
         </div>
-        <SwapTable token={token} />
-        <PoolInfo token={token} />
-        {/* <Score score={token.dextScore?.total} name={token.name} /> */}
+        <Safety token={token} />
+        <div className='border-b-fuchsia-800 border-b h-10 w-full py-8'></div>
+        <div className='flex items-center justify-center pb-4 px-1 mt-4'>
+          <img src={token.logo} alt={token.symbol} className="h-14 w-14 rounded-full border-[#651e6e]" />
+        </div>
         {renderDescription()}
       </div>
     </>

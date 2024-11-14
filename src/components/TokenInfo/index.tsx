@@ -67,7 +67,7 @@ export default function TokenInfo(props: any) {
           </div>
           <span className={`text-xl font-bold ${token.price24hChange > 0 ? 'text-green-500' : 'text-red-500'}`}>
             <span className='text-sm leading-[1.43] font-medium overflow-hidden text-ellipsis whitespace-nowrap'> 
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" className={`inline-block items-center justify-center ${token.price24hChange > 0 ? '' : 'rotate-180'}`}  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M5 15h14l-7-8z"></path></svg> 
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className={`inline-block items-center justify-center ${token.price24hChange > 0 ? '' : 'rotate-180'}`}  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M5 15h14l-7-8z"></path></svg> 
               {formatNumber(token.price24hChange)}%
             </span>
           </span>
