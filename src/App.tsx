@@ -9,8 +9,8 @@ import TrendingPage from './screens/Trending';
 import { themeDark, themeLight } from './assets/theme';
 import { getCookie } from './utils/cookies';
 import NewPairs from './screens/NewPairs';
-import LeftNavbar from './components/LeftNavbar';
 import WhaleTrackerPage from './screens/WhaleTracker';
+import WalletAnalyzer from './screens/WalletAnalyzer';
 
 function App() {
   const path = window.location.pathname;
@@ -28,6 +28,8 @@ function App() {
       // return <AddToken theme={theme} mobile={isMobile} />;
       case '/NewPairs':
         return <NewPairs theme={theme} mobile={isMobile} />;
+      case '/WalletAnalyzer':
+        return <WalletAnalyzer theme={theme} mobile={isMobile} />;
       case '/WhaleTracker':
         return <WhaleTrackerPage theme={theme} mobile={isMobile} />;
       default:

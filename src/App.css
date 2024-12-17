@@ -61,6 +61,7 @@
 }
 .bg-rebrand-patch-one {
   background-image: linear-gradient(282.71deg, #38ffea -12.46%, #ee36f1 84.83%);
+  z-index: -1;
 }
 
 input::-webkit-outer-spin-button,
@@ -69,6 +70,37 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.text-seedex{
+.text-seedex-light{
   color: #f7d4fd !important;
+}
+
+.text-seedex{
+  color: #fd00ff !important;
+}
+
+.one-line, .two-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.one-line {
+  word-break: break-all;
+  -webkit-line-clamp: 1;
+}
+
+.bg-dark-seedex{
+  --tw-bg-opacity: 1;
+    background-color: rgb(26 8 29 / var(--tw-bg-opacity, 1));
+}
+
+.bg-light-seedex{
+    --tw-bg-opacity: 1;
+    background-color: rgb(35 10 40 / var(--tw-bg-opacity, 1));
+}
+
+.bg-tab-header-seedex{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 4 35 / var(--tw-bg-opacity, 1));
 }
