@@ -41,7 +41,7 @@ export default function General(props: any) {
                 <Tab
                   key={index}
                   label={
-                    <div className={`text-center ${selectedTab === index ? 'text-seedex' : 'text-white'}`}>
+                    <div className={`text-center ${selectedTab === index ? 'text-seedex-light' : 'text-white'}`}>
                       <span>{tab.label}</span>
                       <br />
                       <span
@@ -84,13 +84,13 @@ export default function General(props: any) {
                       <div className="flex flex-1 flex-col gap-2 md:px-1.5">
                         <div className="flex items-center justify-between px-1">
                           <div className="flex flex-col gap-1">
-                            <p className="text-seedex text-[13px] sm:text-sm">Buys</p>
+                            <p className="text-seedex-light text-[13px] sm:text-sm">Buys</p>
                             <p className="text-[13px] font-medium text-white sm:text-sm">
                               {tab.data?.buys || 'N/A'}
                             </p>
                           </div>
                           <div className="flex flex-col gap-1">
-                            <p className="text-seedex text-[13px] sm:text-sm">Sells</p>
+                            <p className="text-seedex-light text-[13px] sm:text-sm">Sells</p>
                             <p className="text-[13px] font-medium text-white sm:text-sm">
                               {tab.data?.sells || 'N/A'}
                             </p>
@@ -131,19 +131,19 @@ export default function General(props: any) {
         <div className="flex w-full flex-col my-2 md:my-3">
           <div className="md:bg-[#100113] mt-1 grid grid-cols-3 gap-0 md:mt-0 ">
             <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-2 px-2.5 sm:py-2">
-              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+              <div className="text-seedex-light flex items-center justify-center gap-1.5 ">
                 <p className="text-xs ">Market Cap</p>
               </div>
               <p className="text-center font-normal text-white">${shortNumber(token.marketCap)  || 'NAN'}</p>
             </div>
             <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-t-[0.8px] border-b-[0.8px] py-1.5 px-2.5 sm:py-2">
-              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+              <div className="text-seedex-light flex items-center justify-center gap-1.5 ">
                 <p className="text-xs">Daily Volume</p>
               </div>
               <p className="text-center font-normal text-white">${shortNumber(token.volume24h)  || 'NAN'}</p>
             </div>
             <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-1.5 px-2.5 sm:py-2">
-              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+              <div className="text-seedex-light flex items-center justify-center gap-1.5 ">
                 <p className="text-xs">Liquidity</p>
               </div>
               <p className="text-center font-normal text-white">${shortNumber(token.liquidity.usd)  || 'NAN'}</p>
@@ -151,19 +151,19 @@ export default function General(props: any) {
           </div>
           <div className="md:bg-[#100113] mt-1 grid grid-cols-3 gap-0 md:mt-0 ">
             <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-2 px-2.5 sm:py-2">
-              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+              <div className="text-seedex-light flex items-center justify-center gap-1.5 ">
                 <p className="text-xs ">Holders</p>
               </div>
               <p className="text-center font-normal text-white">{token.holders || 'NAN'}</p>
             </div>
             <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-t-[0.8px] border-b-[0.8px] py-1.5 px-2.5 sm:py-2">
-              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+              <div className="text-seedex-light flex items-center justify-center gap-1.5 ">
                 <p className="text-xs">Max Supply</p>
               </div>
               <p className="text-center font-normal text-white">{shortNumber(token.maxSupply)  || 'NAN'}</p>
             </div>
             <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-1.5 px-2.5 sm:py-2">
-              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+              <div className="text-seedex-light flex items-center justify-center gap-1.5 ">
                 <p className="text-xs">Total Supply</p>
               </div>
               <p className="text-center font-normal text-white">{shortNumber(token.totalSupply)  || 'NAN'}</p>
@@ -171,19 +171,19 @@ export default function General(props: any) {
           </div>
           <div className="md:bg-[#100113] mt-1 grid grid-cols-3 gap-0 md:mt-0 ">
             <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-2 px-2.5 sm:py-2">
-              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+              <div className="text-seedex-light flex items-center justify-center gap-1.5 ">
                 <p className="text-xs ">FDV</p>
               </div>
               <p className="text-center font-normal text-white">${shortNumber(token.fdv)  || 'NAN'}</p>
             </div>
             <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-t-[0.8px] border-b-[0.8px] py-1.5 px-2.5 sm:py-2">
-              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+              <div className="text-seedex-light flex items-center justify-center gap-1.5 ">
                 <p className="text-xs">ATH</p>
               </div>
               <p className="text-center font-normal text-white">${formatNumber(token.market_data.ath.usd) || 'NAN'}</p>
             </div>
             <div className="border-fuchsia-900 flex flex-1 flex-col justify-center gap-1 border-[0.8px] py-1.5 px-2.5 sm:py-2">
-              <div className="text-seedex flex items-center justify-center gap-1.5 ">
+              <div className="text-seedex-light flex items-center justify-center gap-1.5 ">
                 <p className="text-xs">ATL</p>
               </div>
               <p className="text-center font-normal text-white">${formatNumber(token.market_data.atl.usd)  || 'NAN'}</p>
@@ -193,19 +193,19 @@ export default function General(props: any) {
 
         {/* Displaying token information */}
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='text-seedex text-sm'>Pair age</p>
+          <p className='text-seedex-light text-sm'>Pair age</p>
           <p className='text-sm text-white'>{token.creationTime} </p>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='text-seedex text-sm'>Pooled {token.baseToken.symbol  || 'NAN'}</p>
+          <p className='text-seedex-light text-sm'>Pooled {token.baseToken.symbol  || 'NAN'}</p>
           <p className='text-sm text-white'>{shortNumber(token.reserve)} </p>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='text-seedex text-sm'>Pooled {token.quoteToken.symbol  || 'NAN'}</p>
+          <p className='text-seedex-light text-sm'>Pooled {token.quoteToken.symbol  || 'NAN'}</p>
           <p className='text-sm text-white'>{formatNumber(token.reserveRef)} </p>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='text-seedex text-sm'>{token.baseToken.symbol  || 'NAN'}</p>
+          <p className='text-seedex-light text-sm'>{token.baseToken.symbol  || 'NAN'}</p>
           <div className="flex gap-2">
             {/* Address display button */}
             <button className="bg-[#220a26] border-[#651e6e] flex items-center gap-1.5 border px-2 py-0.5 text-xs font-semibold text-white">
@@ -239,7 +239,7 @@ export default function General(props: any) {
           </div>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='text-seedex text-sm'>{token.quoteToken.symbol  || 'NAN'}</p>
+          <p className='text-seedex-light text-sm'>{token.quoteToken.symbol  || 'NAN'}</p>
           <div className="flex gap-2">
             {/* Address display button */}
             <button className="bg-[#220a26] border-[#651e6e] flex items-center gap-1.5 border px-2 py-0.5 text-xs font-semibold text-white">
@@ -273,7 +273,7 @@ export default function General(props: any) {
           </div>
         </div>
         <div className='border-[#651e6e] flex items-center justify-between border-b-[0.8px] py-2 px-1'>
-          <p className='text-seedex text-sm'>Pair</p>
+          <p className='text-seedex-light text-sm'>Pair</p>
           <div className="flex gap-2">
             {/* Address display button */}
             <button className="bg-[#220a26] border-[#651e6e] flex items-center gap-1.5 border px-2 py-0.5 text-xs font-semibold text-white">

@@ -2,6 +2,8 @@ import { Search } from '@mui/icons-material';
 import { CircularProgress, TextField } from '@mui/material';
 import { searchToken } from '../../../api/search';
 import themeSearchbar from '../theme';
+
+
 export default function Input(props: any) {
   const { params, loading, setOptions } = props;
 
@@ -51,7 +53,7 @@ export default function Input(props: any) {
       sx={themeSearchbar.input}
       InputProps={{
         ...params.InputProps,
-        className: 'input_address',
+        className: 'w-full m-0 p-[8px] !px-[8px] rounded-md text-[14px]',
         startAdornment: (
           <>
             {loading ? <CircularProgress color="inherit" size={20} /> : <Search color="inherit" />}
