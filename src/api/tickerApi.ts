@@ -63,7 +63,7 @@ export const addToken = async (address: string, chain: string, adminkey: string)
     });
 };
 
-export const getNewPairs = async () => {
+{/*export const getNewPairs = async () => {
   const images: any = {};
 
   try {
@@ -104,6 +104,49 @@ export const getNewPairs = async () => {
         .market_cap_in_usd,
     }));
   } catch (error) {
+    return [];
+  }
+};
+*/}
+
+export const getNewPairs = async () => {
+  
+  try {
+    const res = await axios.get(`${API}/getPairs`);
+    console.log('Response Data:', res.data);
+
+    return res.data.map((val: any) => ({
+      chain: val.chain,
+      pairHash: val.pairHash,
+      baseHash: val.baseHash,
+      baseSymbol: val.baseSymbol,
+      baseName: val.baseName,
+      baseIconTs: val.baseIconTs,
+      socials: val.socials,
+      verified: val.verified,
+      quoteHash: val.quoteHash,
+      quoteSymbol: val.quoteSymbol,
+      quoteName: val.quoteName,
+      quoteIconTs: val.quoteIconTs,
+      dexHash: val.dexHash,
+      dexName: val.dexName,
+      dexIconTs: val.dexIconTs,
+      price: val.price,
+      createdAt: val.createdAt,
+      discoveredAt: val.discoveredAt,
+      liquidity: val.liquidity,
+      marketCap: val.marketCap,
+      fdMarketCap: val.fdMarketCap,
+      volume: val.volume,
+      transactions: val.transactions,
+      makers: val.makers,
+      pc5m: val.pc5m,
+      pc1h: val.pc1h,
+      pc6h: val.pc6h,
+      pc24h: val.pc24h,
+    }));
+  } catch (error) {
+    console.error(error);
     return [];
   }
 };
