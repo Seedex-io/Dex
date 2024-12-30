@@ -12,21 +12,34 @@ import Filters from './filters';
 import WarningMessage from '../../components/WarningMsg';
 
 interface Token {
-  id: string;
-  symbol: string;
-  pairAddress: string;
-  price: number;
-  pool_created_at: string;
-  volume: number;
-  last_5m: string;
-  last_1h: string;
-  last_6h: string;
-  last_24h: string;
-  liquidity: number;
-  fdv: number;
-  marketCap: number;
-  txs: number;
-  image?: string;
+  chain: number;
+  pairHash: string;
+  baseHash: string;
+  baseSymbol: string;
+  baseName: string;
+  baseIconTs: number;
+  socials: any;
+  verified: any;
+  quoteHash: string;
+  quoteSymbol: string;
+  quoteName: string;
+  quoteIconTs: number;
+  dexHash: string;
+  dexName: string;
+  dexIconTs: number;
+  price: string;
+  createdAt: number;
+  discoveredAt: any;
+  liquidity: string;
+  marketCap: string;
+  fdMarketCap: string;
+  volume: string;
+  transactions: number;
+  makers: number;
+  pc5m: number;
+  pc1h: number;
+  pc6h: number;
+  pc24h: number;
 }
 
 interface FilterCriteria {
@@ -124,16 +137,16 @@ export default function NewPairs(props: any) {
   
     // Apply all filter criteria here
     return (
-      withinRange(token.volume, minVolume, maxVolume) &&
-      withinRange(token.price, minPrice, maxPrice) &&
-      withinRange(token.liquidity, minLiquidity, maxLiquidity) &&
-      withinRange(parseFloat(token.last_5m), minLast5mChange, maxLast5mChange) &&
-      withinRange(parseFloat(token.last_1h), minLast1hChange, maxLast1hChange) &&
-      withinRange(parseFloat(token.last_6h), minLast6hChange, maxLast6hChange) &&
-      withinRange(parseFloat(token.last_24h), minLast24hChange, maxLast24hChange) &&
-      withinRange(token.fdv, minFDV, maxFDV) &&
-      (!dateRange.start || new Date(token.pool_created_at).getTime() >= new Date(dateRange.start).getTime()) &&
-      (!dateRange.end || new Date(token.pool_created_at).getTime() <= new Date(dateRange.end).getTime())
+      withinRange(parseFloat(token.volume), minVolume, maxVolume) &&
+      withinRange(parseFloat(token.price), minPrice, maxPrice) &&
+      withinRange(parseFloat(token.liquidity), minLiquidity, maxLiquidity) &&
+      withinRange(token.pc5m, minLast5mChange, maxLast5mChange) &&
+      withinRange(token.pc1h, minLast1hChange, maxLast1hChange) &&
+      withinRange(token.pc6h, minLast6hChange, maxLast6hChange) &&
+      withinRange(token.pc24h, minLast24hChange, maxLast24hChange) &&
+      withinRange(parseFloat(token.fdMarketCap), minFDV, maxFDV) &&
+      (!dateRange.start || new Date(token.createdAt * 1000).getTime() >= new Date(dateRange.start).getTime()) &&
+      (!dateRange.end || new Date(token.createdAt * 1000).getTime() <= new Date(dateRange.end).getTime())
     );
   };
   
@@ -182,7 +195,7 @@ export default function NewPairs(props: any) {
               <DataGrid
                 rows={filteredTokens}
                 columns={columns}
-                getRowId={(row: Token) => row.id}
+                getRowId={(row: Token) => row.pairHash}
                 pageSize={filteredTokens.length}
                 rowsPerPageOptions={[]}
                 disableColumnMenu
@@ -199,7 +212,7 @@ export default function NewPairs(props: any) {
                   footerContainer: 'token_explorer_footer_container',
                 }}
                 onCellClick={(params) => {
-                  window.open(`/${params.row.pairAddress}-ether`, '_self');
+                  window.open(`/${params.row.pairHash}-ether`, '_self');
                 }}
                 className="overflow-hidden"
               />
