@@ -1,6 +1,6 @@
 // export const API = 'http://localhost:4000/usd';
 // export const APIToken = 'http://localhost:4000/token';
-export const API = 'https://cors-anywhere.herokuapp.com/https://api-wpvh.onrender.com';
+export const API = 'https://api-wpvh.onrender.com';
 export const APIToken = '';
 export const CAPI = 'https://api.coingecko.com/api/v3/coins';
 export const API_URL = 'https://graphql.bitquery.io';
