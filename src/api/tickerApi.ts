@@ -112,7 +112,7 @@ export const addToken = async (address: string, chain: string, adminkey: string)
 export const getNewPairs = async () => {
   
   try {
-    const res = await axios.get(`${API}/getPairs`);
+    const res = await axios.get(`${API}/getpairs`);
     console.log('Response Data:', res.data);
 
     return res.data.map((val: any) => ({
