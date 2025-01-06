@@ -7,14 +7,14 @@ const LoadingWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  background: #161a1e;
+  position: relative;
   top: 0px;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 999;
   width: 100%;
+  height: 100vh;
   overflow: hidden !hidden;
   .wave-fill {
     height: 90px;
@@ -78,7 +78,7 @@ const LoadingText = styled.div`
   overflow: hidden !hidden;
 `;
 
-export default function Loading(props: any) {
+export default function SmallLoading(props: any) {
   const { text } = props;
   return (
     <>
