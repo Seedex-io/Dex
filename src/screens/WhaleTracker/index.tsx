@@ -17,6 +17,7 @@ import sushiswap from '../../assets/dex/sushiswap.svg';
 import zrx from '../../assets/dex/zerox_exchange.svg';
 import pancakeswap from '../../assets/dex/pancakeswap.svg';
 import curve from '../../assets/dex/curve.svg';
+import SmallLoading from '../../components/SmallLoading';
 
 // Define logo mapping
 const dexLogoMap: Record<string, string> = {
@@ -54,11 +55,13 @@ export default function WhaleTrackerPage(props: any) {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [selectedTradeSize, setSelectedTradeSize] = useState<string>('10000');
   const [showRelativeTime, setShowRelativeTime] = useState<boolean>(false);
+  const [isFetching, setIsFetching] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const trades = await fetchWhaleTrades();
       setDexTrades(trades);
+      setIsFetching(false);
     };
     fetchData();
   }, []);
@@ -238,6 +241,7 @@ export default function WhaleTrackerPage(props: any) {
                 </tr>
               </thead>
               <tbody className='flex flex-col flex-1'>
+                {isFetching && <SmallLoading />}
                 {filteredTrades.map((trade, index) => (
                   <tr
                     key={index}
