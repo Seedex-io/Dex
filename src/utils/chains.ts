@@ -1,10 +1,19 @@
+import bsc from '../assets/chain/bsc.png';
+import base from '../assets/chain/base.webp';
+import ether from '../assets/chain/ether.png';
+import polygon from '../assets/chain/polygon.webp';
+import solana from '../assets/chain/solana.webp';
+import arbitrum from '../assets/chain/arbitrum.webp';
+import factom from '../assets/chain/bsc.png';
+//
+
 const CHAINS = [
   {
     id: 'factom',
     chain_identifier: null,
     name: 'Factom',
     shortname: '',
-    logo: '../assets/chain/bsc.png',
+    logo: factom,
   },
   {
     id: 'openledger',
@@ -17,7 +26,7 @@ const CHAINS = [
     chain_identifier: 8453,
     name: 'Basechain',
     shortname: '',
-    logo: '../assets/chain/base.webp',
+    logo: base,
   },
   {
     id: 'cosmos',
@@ -402,7 +411,7 @@ const CHAINS = [
     chain_identifier: 42161,
     name: 'Arbitrum One',
     shortname: 'Arbitrum',
-    logo: '../assets/chain/arbitrum.webp',
+    logo: arbitrum,
   },
   {
     id: 'bsc',
@@ -410,7 +419,7 @@ const CHAINS = [
     name: 'BNB Smart Chain',
     shortname: 'BSC',
     chain_name: 'chain-bsc',
-    logo: '../assets/chain/bsc.png',
+    logo: bsc,
   },
   {
     id: 'ronin',
@@ -423,7 +432,7 @@ const CHAINS = [
     chain_identifier: 1399811149,
     name: 'Solana',
     shortname: '',
-    logo: '../assets/chain/solana.webp',
+    logo: solana,
   },
   {
     id: 'fantom',
@@ -460,7 +469,7 @@ const CHAINS = [
     chain_identifier: 137,
     name: 'Polygon POS',
     shortname: 'MATIC',
-    logo: '../assets/chain/polygon.webp',
+    logo: polygon,
   },
   {
     id: 'bitgert',
@@ -534,14 +543,14 @@ const CHAINS = [
     name: 'Ethereum',
     shortname: 'eth',
     chain_name: 'chain-ethereum',
-    logo: '../assets/chain/ether.png',
+    logo: ether,
   },
   {
     id: 'ethw',
     chain_identifier: 1,
     name: 'Ethereum',
     shortname: 'eth',
-    logo: '../assets/chain/ether.png',
+    logo: ether,
   },
   {
     id: 'milkomeda-cardano',
@@ -819,4 +828,10 @@ export const getChainLogo = (chainIdentifier: number) => {
   return CHAINS.find(
     (chain) => chain.chain_identifier === chainIdentifier
   )?.logo;
+};
+
+export const getChainNameById = (chainIdentifier: number) => {
+  return CHAINS.find(
+    (chain) => chain.chain_identifier === chainIdentifier
+  )?.name.toLowerCase();
 };
