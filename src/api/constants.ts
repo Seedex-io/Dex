@@ -4,7 +4,7 @@ export const API = 'https://api-wpvh.onrender.com';
 export const APIToken = '';
 export const CAPI = 'https://api.coingecko.com/api/v3/coins';
 export const API_URL = 'https://graphql.bitquery.io';
-export const API_KEY = 'BQYj1N4J4PdOHGFdekrpFSt8BVC9WDij';
+export const API_KEY = 'BQY53cNuHILrTV0ZSGO77ih4bryLVVIM';
 
 export const ORIGIN = 'https://allorigins.win';
 
