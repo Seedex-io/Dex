@@ -1,7 +1,7 @@
 import { GridColDef } from '@mui/x-data-grid';
 import formatNumberSmaller, { commaFormatted } from '../../utils/helpers/numberFormat';
 import { TimeAgoCell } from '../../components/HelperComponents/TimeAgoCell';
-import { getChainLogo } from '../../utils/chains';
+import { getChainLogo, getChainNameById } from '../../utils/chains';
 
 export const columns: GridColDef[] = [
   {
@@ -13,23 +13,28 @@ export const columns: GridColDef[] = [
       <div className="flex items-center space-x-2 text-white">
         <div className="relative w-10 h-10">
           {/* Token logo */}
-          {params?.row?.baseIconTs ? (
-            <img
-              src={`https://example.com/icons/${params.row.baseIconTs}.png`}
-              alt="icon"
-              className="w-10 h-10 rounded-full"
-            />
-          ) : (
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#ba5ae1]/90 to-[#4cc0ec]/90 flex items-center justify-center text-white font-bold">
-              {params?.row?.baseSymbol?.charAt(0)}
-            </div>
-          )}
+          <img
+            src={`https://dd.dexscreener.com/ds-data/tokens/${getChainNameById(params?.row?.chain)}/${params.row.baseHash}.png`}
+            alt="icon"
+            className="w-10 h-10 rounded-full"
+            onError={(e) => {
+              const imgElement = e.target as HTMLImageElement;
+              imgElement.onerror = null;
+              imgElement.style.display = 'none';
+              imgElement.parentElement?.insertAdjacentHTML(
+                'beforeend',
+                `<div class="w-10 h-10 rounded-full bg-gradient-to-r from-[#ba5ae1]/90 to-[#4cc0ec]/90 flex items-center justify-center text-white font-bold">
+                  ${params?.row?.baseSymbol?.charAt(0)}
+                </div>`
+              );
+            }}
+          />
 
           {/* Chain icon */}
           <img
             src={getChainLogo(params?.row?.chain)}
             alt="chain icon"
-            className="w-4 h-4 rounded-full absolute bottom-0 right-0"
+            className="w-4 h-4 rounded-full absolute bottom-0 right-0 bg-black p-[2px]"
           />
         </div>
         <div>
