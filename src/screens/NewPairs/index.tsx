@@ -60,6 +60,8 @@ interface FilterCriteria {
   maxLast6hChange: number | null;
   minLast24hChange: number | null;
   maxLast24hChange: number | null;
+  minTransactions: number | null;
+  maxTransactions: number | null;
 }
 
 export default function NewPairs(props: any) {
@@ -88,6 +90,8 @@ export default function NewPairs(props: any) {
     maxLast6hChange: null,
     minLast24hChange: null,
     maxLast24hChange: null,
+    minTransactions: null,
+    maxTransactions: null,
   });
 
   const [filters, setFilters] = useState<FilterCriteria>(tempFilters);
@@ -128,6 +132,8 @@ export default function NewPairs(props: any) {
       minFDV,
       maxFDV,
       dateRange,
+      minTransactions,
+      maxTransactions,
     } = filters;
   
     // Helper function to check if a value is within the specified range
@@ -144,6 +150,7 @@ export default function NewPairs(props: any) {
       withinRange(token.pc1h, minLast1hChange, maxLast1hChange) &&
       withinRange(token.pc6h, minLast6hChange, maxLast6hChange) &&
       withinRange(token.pc24h, minLast24hChange, maxLast24hChange) &&
+      withinRange(token.transactions, minTransactions, maxTransactions) &&
       withinRange(parseFloat(token.fdMarketCap), minFDV, maxFDV) &&
       (!dateRange.start || new Date(token.createdAt * 1000).getTime() >= new Date(dateRange.start).getTime()) &&
       (!dateRange.end || new Date(token.createdAt * 1000).getTime() <= new Date(dateRange.end).getTime())

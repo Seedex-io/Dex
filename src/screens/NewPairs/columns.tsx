@@ -2,6 +2,7 @@ import { GridColDef } from '@mui/x-data-grid';
 import formatNumberSmaller, { commaFormatted } from '../../utils/helpers/numberFormat';
 import { TimeAgoCell } from '../../components/HelperComponents/TimeAgoCell';
 import { getChainLogo, getChainNameById } from '../../utils/chains';
+import CopyText from '../../components/CopyText';
 
 export const columns: GridColDef[] = [
   {
@@ -40,14 +41,12 @@ export const columns: GridColDef[] = [
         <div>
           <div className="flex items-center space-x-1">
             <span className="font-bold">
-              {params.row.baseName}
+              {params.row.baseSymbol}
             </span>
-            <span className="text-[#818ea3] text-xs leading-none font-normal overflow-hidden text-ellipsis whitespace-nowrap">
-              / {params.row.quoteSymbol}
-            </span>
+            <CopyText text={params.row.baseHash} />
           </div>
           <div className="text-sm ">
-            {params?.row?.pairHash ? `${params.row.pairHash.slice(0, 4)}...${params.row.pairHash.slice(-4)}` : ''}
+            {params.row.baseName}
           </div>
         </div>
       </div>

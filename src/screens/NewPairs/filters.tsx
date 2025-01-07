@@ -25,6 +25,8 @@ interface FilterCriteria {
     maxLast6hChange: number | null;
     minLast24hChange: number | null;
     maxLast24hChange: number | null;
+    minTransactions: number | null;
+    maxTransactions: number | null;
 }
 
 interface FiltersProps {

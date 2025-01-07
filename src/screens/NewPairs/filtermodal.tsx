@@ -23,6 +23,8 @@ interface FilterCriteria {
     maxLast6hChange: number | null;
     minLast24hChange: number | null;
     maxLast24hChange: number | null;
+    minTransactions: number | null;
+    maxTransactions: number | null;
 }
 
 interface FiltermodalProps {
@@ -113,8 +115,8 @@ const Filtermodal: React.FC<FiltermodalProps> = ({ filters, onFilterChange, onAp
                     <div className="flex flex-col py-1 md:py-2">
                         <div className="grid grid-cols-[4rem,1fr,1fr] gap-1 md:grid-cols-[8rem,1fr,1fr] md:gap-3">
                             <p className="mr-1 self-center text-right text-sm text-white">24h Swaps: </p>
-                            <div className="flex flex-1 items-center"><input type="number" placeholder="Min" className="border-[#4d2c53] focus:!border-[#b52fcc] h-[34px] w-0 flex-1 rounded-none border bg-transparent px-2 py-1.5 text-sm text-white hover:border-white/20" value={filters.maxLast5mChange || ''} onChange={handleInputChange('maxLiquidity')} /></div>
-                            <div className="flex flex-1 items-center"><input type="number" placeholder="Max"  className="border-[#4d2c53] focus:!border-[#b52fcc] h-[34px] w-0 flex-1 rounded-none border bg-transparent px-2 py-1.5 text-sm text-white hover:border-white/20" value={filters.maxLiquidity || ''} onChange={handleInputChange('maxLiquidity')} /></div>
+                            <div className="flex flex-1 items-center"><input type="number" placeholder="Min" className="border-[#4d2c53] focus:!border-[#b52fcc] h-[34px] w-0 flex-1 rounded-none border bg-transparent px-2 py-1.5 text-sm text-white hover:border-white/20" value={filters.minTransactions || ''} onChange={handleInputChange('minTransactions')} /></div>
+                            <div className="flex flex-1 items-center"><input type="number" placeholder="Max"  className="border-[#4d2c53] focus:!border-[#b52fcc] h-[34px] w-0 flex-1 rounded-none border bg-transparent px-2 py-1.5 text-sm text-white hover:border-white/20" value={filters.maxTransactions || ''} onChange={handleInputChange('maxTransactions')} /></div>
                         </div>
                     </div>
                     <div className="flex flex-col py-1 md:py-2">
