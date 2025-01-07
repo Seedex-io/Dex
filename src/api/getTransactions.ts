@@ -92,6 +92,7 @@ export const fetchWalletAnalytics = async (address: string, network: string) => 
             date: { since: "${sevenDaysAgo}" }
             any: [{ taker: { is: "${address}" } }, { txSender: { is: "${address}" } }]
             options: { desc: "block.height", limit: 100 }
+            baseCurrency: {in: ["WBNB", "USDT", "BUSD"]}
           ) {
             transaction {
               hash
@@ -127,7 +128,10 @@ export const fetchWalletAnalytics = async (address: string, network: string) => 
             baseCurrency {
               symbol
             }
-            type: __typename @client
+            quoteCurrency {
+              symbol
+              name
+            }
           }
         }
       }

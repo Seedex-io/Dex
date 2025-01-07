@@ -3,6 +3,7 @@ import { fetchWalletAnalytics } from '../../api/getTransactions';
 import { calculateAge } from './utils';
 import etherscanlogo from '../../assets/etherscan-logo.webp'
 import etherlogo from '../../assets/chain/ether.png'
+import NoLogo from '../../assets/n0n3.png'
 
 interface ResultPageProps {
   address: string;
@@ -22,6 +23,7 @@ const Results: React.FC<ResultPageProps> = ({ address }) => {
       try {
         const trades = await fetchWalletAnalytics(address, currentNetwork);
         setAllTrades(trades);
+        console.log(trades);
         setError(trades.length === 0 ? 'No trades found for this address.' : null);
       } catch (err) {
         setError('Failed to fetch wallet analytics. Please try again.');
@@ -288,11 +290,12 @@ a 49,49 0 1 1 0,-98
         <div className="overflow-x-auto rounded-xl border border-fuchsia-500 mt-8">
           <table className="min-w-full border-collapse border border-fuchsia-950">
             <thead className="bg-tab-header-seedex sticky -top-[1px] z-10 grid">
-              <tr className="text-center grid grid-cols-[minmax(50px,1.5fr),80px,minmax(80px,1fr),minmax(80px,1fr),minmax(70px,0.9fr),minmax(100px,1fr),80px] md:grid-cols-[1.5fr,80px,1fr,1fr,0.9fr,1fr,80px]">
-                <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">Chain</th>
+              <tr className="text-center grid grid-cols-[80px,minmax(50px,1.5fr),minmax(80px,1fr),minmax(80px,1fr),minmax(70px,0.9fr),minmax(100px,1fr),80px] md:grid-cols-[80px,1.5fr,1fr,1fr,0.9fr,1fr,80px]">
+                <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">Type</th>
+                <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">Token</th>
                 <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">Age</th>
-                <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">From</th>
-                <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">To</th>
+                <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">Maker</th>
+                <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">Quantity</th>
                 <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">Trade Value (USD)</th>
                 <th className="px-4 py-3 text-sm font-semibold border border-fuchsia-950">Tx Hash</th>
               </tr>
@@ -301,9 +304,29 @@ a 49,49 0 1 1 0,-98
               {allTrades.map((trade, index) => (
                 <tr
                   key={index}
-                  className="hover:opacity-70 bg-light-seedex transition-colors duration-200 text-center  grid grid-cols-[minmax(50px,1.5fr),80px,minmax(80px,1fr),minmax(80px,1fr),minmax(70px,0.9fr),minmax(100px,1fr),80px] md:grid-cols-[1.5fr,80px,1fr,1fr,0.9fr,1fr,80px]"
+                  className="hover:opacity-70 bg-light-seedex transition-colors duration-200 text-center grid grid-cols-[80px,minmax(50px,1.5fr),minmax(80px,1fr),minmax(80px,1fr),minmax(70px,0.9fr),minmax(100px,1fr),80px] md:grid-cols-[80px,1.5fr,1fr,1fr,0.9fr,1fr,80px]"
                 >
-                  <td className="px-4 py-3 border border-fuchsia-950">{trade.type}</td>
+                  <td className={`px-4 py-3 border border-fuchsia-950 flex h-full items-center justify-center ${trade.type === 'Sell' ? 'text-red-500' : 'text-green-500'}`}>
+                    {trade.type}
+                  </td>
+                  <td className="px-4 py-3 border border-fuchsia-950">
+                    <div className="flex items-center gap-2">
+                      <img
+                        src={`https://assets.coincap.io/assets/icons/${trade.quoteCurrency.symbol.toLowerCase()}@2x.png`}
+                        alt={trade.quoteCurrency.symbol}
+                        onError={(e) => {
+                          const imgElement = e.target as HTMLImageElement;
+                          imgElement.onerror = null;
+                          imgElement.src = NoLogo;
+                        }}
+                        className="h-6 w-6 rounded-full"
+                      />
+                      <div className="flex flex-col text-left ml-1">
+                        <span>{trade.quoteCurrency.name}</span>
+                        <span>{trade.quoteCurrency.symbol}</span>
+                      </div>
+                    </div>
+                  </td>
                   <td className="px-4 py-3 border border-fuchsia-950">{calculateAge(trade.date.date)}</td>
                   <td className="px-4 py-3 border border-fuchsia-950">{trade.transaction.hash.substring(0, 6)}...</td>
                   <td className="px-4 py-3 border border-fuchsia-950">{trade.smartContract.currency.name}</td>
