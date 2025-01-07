@@ -329,9 +329,9 @@ a 49,49 0 1 1 0,-98
                   </td>
                   <td className="px-4 py-3 border border-fuchsia-950">{calculateAge(trade.date.date)}</td>
                   <td className="px-4 py-3 border border-fuchsia-950">{trade.transaction.hash.substring(0, 6)}...</td>
-                  <td className="px-4 py-3 border border-fuchsia-950">{trade.smartContract.currency.name}</td>
-                  <td className="px-4 py-3 border border-fuchsia-950">${trade.tradeAmount.toFixed(2)}</td>
-                  <td className="px-4 py-3 border border-fuchsia-950">
+                  <td className={`px-4 py-3 border border-fuchsia-950 ${trade.type === 'Sell' ? 'text-red-500' : 'text-green-500'}`}>{trade.smartContract.currency.name}</td>
+                  <td className={`px-4 py-3 border border-fuchsia-950 ${trade.type === 'Sell' ? 'text-red-500' : 'text-green-500'}`}>${trade.tradeAmount.toFixed(2)}</td>
+                  <td className="px-4 py-3 border border-fuchsia-950">  
                     <a
                       href={`https://${currentNetwork === 'bsc' ? 'bscscan.com' : 'etherscan.io'}/tx/${trade.transaction.hash}`}
                       target="_blank"

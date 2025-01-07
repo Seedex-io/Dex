@@ -4,12 +4,20 @@ const CHAINS = [
     chain_identifier: null,
     name: 'Factom',
     shortname: '',
+    logo: '../assets/chain/bsc.png',
   },
   {
     id: 'openledger',
     chain_identifier: null,
     name: 'OpenLedger',
     shortname: '',
+  },
+  {
+    id: 'basechain',
+    chain_identifier: 8453,
+    name: 'Basechain',
+    shortname: '',
+    logo: '../assets/chain/base.webp',
   },
   {
     id: 'cosmos',
@@ -394,6 +402,7 @@ const CHAINS = [
     chain_identifier: 42161,
     name: 'Arbitrum One',
     shortname: 'Arbitrum',
+    logo: '../assets/chain/arbitrum.webp',
   },
   {
     id: 'bsc',
@@ -401,6 +410,7 @@ const CHAINS = [
     name: 'BNB Smart Chain',
     shortname: 'BSC',
     chain_name: 'chain-bsc',
+    logo: '../assets/chain/bsc.png',
   },
   {
     id: 'ronin',
@@ -410,9 +420,10 @@ const CHAINS = [
   },
   {
     id: 'solana',
-    chain_identifier: null,
+    chain_identifier: 1399811149,
     name: 'Solana',
     shortname: '',
+    logo: '../assets/chain/solana.webp',
   },
   {
     id: 'fantom',
@@ -449,6 +460,7 @@ const CHAINS = [
     chain_identifier: 137,
     name: 'Polygon POS',
     shortname: 'MATIC',
+    logo: '../assets/chain/polygon.webp',
   },
   {
     id: 'bitgert',
@@ -522,12 +534,14 @@ const CHAINS = [
     name: 'Ethereum',
     shortname: 'eth',
     chain_name: 'chain-ethereum',
+    logo: '../assets/chain/ether.png',
   },
   {
     id: 'ethw',
     chain_identifier: 1,
     name: 'Ethereum',
     shortname: 'eth',
+    logo: '../assets/chain/ether.png',
   },
   {
     id: 'milkomeda-cardano',
@@ -799,4 +813,10 @@ export const getChainName = (chainId: string) => {
   return CHAINS.find(
     (chain) => chain.id.toLowerCase() === chainId.toLowerCase()
   )?.name;
+};
+
+export const getChainLogo = (chainIdentifier: number) => {
+  return CHAINS.find(
+    (chain) => chain.chain_identifier === chainIdentifier
+  )?.logo;
 };

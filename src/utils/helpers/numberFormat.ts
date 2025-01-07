@@ -106,7 +106,7 @@ export default function formatNumberSmaller(number: any, afterDot = 3, removeNeg
 
   let numberStr: any = `${number}`.split('.')[1];
 
-  if (numberStr[0] !== '0') {
+  if (!numberStr || numberStr[0] !== '0') {
     let result = `${parseFloat(number).toFixed(afterDot)}`;
     if (removeNegativeSign) {
       result = result.replace('-', '');
