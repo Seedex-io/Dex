@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API, API_URL, API_KEY } from './constants';
+import dayjs from 'dayjs';
 
 export const getTransactions = async (pairAddress: any, chain: any, tokenAddress: string) => {
   try {
@@ -81,12 +82,14 @@ export const fetchWhaleTrades = async () => {
 // Fetch wallet analytics data
 export const fetchWalletAnalytics = async (address: string, network: string) => {
   try {
+    const sevenDaysAgo = dayjs().subtract(7, 'days').toISOString();
+
     const query = {
       query: `
       {
         ethereum(network: ${network}) {
           dexTrades(
-            date: { since: "2022-05-05" }
+            date: { since: "${sevenDaysAgo}" }
             any: [{ taker: { is: "${address}" } }, { txSender: { is: "${address}" } }]
             options: { desc: "block.height", limit: 100 }
           ) {
@@ -121,6 +124,10 @@ export const fetchWalletAnalytics = async (address: string, network: string) => 
               address
             }
             tradeAmount(in: USD)
+            baseCurrency {
+              symbol
+            }
+            type: __typename @client
           }
         }
       }
@@ -134,7 +141,14 @@ export const fetchWalletAnalytics = async (address: string, network: string) => 
       },
     });
 
-    return response.data?.data?.ethereum?.dexTrades || [];
+    const trades = response.data?.data?.ethereum?.dexTrades || [];
+
+    // Add the type field to each trade
+    trades.forEach((trade: any) => {
+      trade.type = trade.sellCurrency.symbol === trade.baseCurrency.symbol ? 'Sell' : 'Buy';
+    });
+
+    return trades;
   } catch (error) {
     console.error('Error fetching wallet analytics:', error);
     return [];

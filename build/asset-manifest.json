@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.61bb4dce.css",
+    "main.js": "/static/js/main.73fb23fe.js",
+    "static/js/27.1bef9b7a.chunk.js": "/static/js/27.1bef9b7a.chunk.js",
+    "static/media/fullLogoLight.png": "/static/media/fullLogoLight.809e246edb7a108b8103.png",
+    "static/media/curve.svg": "/static/media/curve.ad7825179cbeb9d01ed9c77886336520.svg",
+    "static/media/n0n3.png": "/static/media/n0n3.ab5bf712455e6a198524.png",
+    "static/media/logo.png": "/static/media/logo.265c6ca7f5a0ae37d196.png",
+    "static/media/uniswap.webp": "/static/media/uniswap.8580a733d38925257165.webp",
+    "static/media/1inch.svg": "/static/media/1inch.ad204e74b424cafedf52e73171a8170e.svg",
+    "static/media/uniswap.svg": "/static/media/uniswap.122b46d7a6066b9acdebf121c9bae52a.svg",
+    "static/media/etherscan-logo.webp": "/static/media/etherscan-logo.2436b87069c0e6071550.webp",
+    "static/media/avaxscan.svg": "/static/media/avaxscan.e90811a9ca72a6eca12d5a843f72a232.svg",
+    "static/media/sushiswap.svg": "/static/media/sushiswap.ce3f3780ee9d3f6909a035236d4ece0d.svg",
+    "static/media/solana.svg": "/static/media/solana.1711d333259b9570d33003f1421e0815.svg",
+    "static/media/pancakeswap.svg": "/static/media/pancakeswap.285bc1bc8857f04d0bbbca88775c2e79.svg",
+    "static/media/polygonscan.svg": "/static/media/polygonscan.4c627bd5b34aeb13cc9bbe20176b9fe8.svg",
+    "static/media/zerox_exchange.svg": "/static/media/zerox_exchange.22601c4f365e65fb5836987561791e43.svg",
+    "index.html": "/index.html",
+    "static/media/balancer.svg": "/static/media/balancer.162393ef3a27ce7c78602b3c98114022.svg",
+    "static/media/kyberswap.svg": "/static/media/kyberswap.b06887cf7bd3d1ffb5c9dd780403eb4e.svg"
+  },
+  "entrypoints": [
+    "static/css/main.61bb4dce.css",
+    "static/js/main.73fb23fe.js"
+  ]
+}

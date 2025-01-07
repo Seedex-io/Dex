@@ -303,7 +303,7 @@ a 49,49 0 1 1 0,-98
                   key={index}
                   className="hover:opacity-70 bg-light-seedex transition-colors duration-200 text-center  grid grid-cols-[minmax(50px,1.5fr),80px,minmax(80px,1fr),minmax(80px,1fr),minmax(70px,0.9fr),minmax(100px,1fr),80px] md:grid-cols-[1.5fr,80px,1fr,1fr,0.9fr,1fr,80px]"
                 >
-                  <td className="px-4 py-3 border border-fuchsia-950">{currentNetwork}</td>
+                  <td className="px-4 py-3 border border-fuchsia-950">{trade.type}</td>
                   <td className="px-4 py-3 border border-fuchsia-950">{calculateAge(trade.date.date)}</td>
                   <td className="px-4 py-3 border border-fuchsia-950">{trade.transaction.hash.substring(0, 6)}...</td>
                   <td className="px-4 py-3 border border-fuchsia-950">{trade.smartContract.currency.name}</td>
