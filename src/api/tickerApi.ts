@@ -63,56 +63,9 @@ export const addToken = async (address: string, chain: string, adminkey: string)
     });
 };
 
-{/*export const getNewPairs = async () => {
-  const images: any = {};
-
+export const getNewPairs = async (page: number = 1) => {
   try {
-    const response = await axios.get(`${API}/getNewPairs`);
-    const data = response.data;
-
-    if (!data.data) return [];
-
-    data.included.forEach((val: any) => {
-      images[val.id] = {
-        image: val.attributes.image_url,
-        symbol: val.attributes.symbol,
-        name: val.attributes.name,
-        tokenAddress: val.attributes.address,
-      };
-    });
-
-    return data.data.map((val: any) => ({
-      id: val.attributes.base_token_id,
-      tokenName: val.attributes.name,
-      pairAddress: val.attributes.address,
-      price: val.attributes.price_in_usd,
-      pool_created_at: val.attributes.pool_created_at,
-      volume: val.attributes.to_volume_in_usd,
-      txs: val.attributes.swap_count_24h,
-      last_5m: val.attributes.price_percent_changes.last_5m,
-      last_1h: val.attributes.price_percent_changes.last_1h,
-      last_6h: val.attributes.price_percent_changes.last_6h,
-      last_24h: val.attributes.price_percent_changes.last_24h,
-      liquidity: val.attributes.reserve_in_usd,
-      image: images[val.attributes.base_token_id]?.image,
-      symbol: images[val.attributes.base_token_id]?.symbol,
-      name: images[val.attributes.base_token_id]?.name,
-      tokenAddress: images[val.attributes.base_token_id]?.tokenAddress,
-      fdv: val.attributes.token_value_data[Object.keys(val.attributes.token_value_data)[1]]
-        .fdv_in_usd,
-      marketCap: val.attributes.token_value_data[Object.keys(val.attributes.token_value_data)[1]]
-        .market_cap_in_usd,
-    }));
-  } catch (error) {
-    return [];
-  }
-};
-*/}
-
-export const getNewPairs = async () => {
-  
-  try {
-    const res = await axios.get(`${API}/getpairs`);
+    const res = await axios.get(`${API}/getpairs?page=${page}`);
     console.log('Response Data:', res.data);
 
     return res.data.map((val: any) => ({
