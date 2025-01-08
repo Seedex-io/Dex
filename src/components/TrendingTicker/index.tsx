@@ -62,17 +62,6 @@ export default function TrendingTicker(props: any) {
                 src={`https://dd.dexscreener.com/ds-data/tokens/${getChainNameById(val.chain)}/${val.baseHash}.png`}
                 alt="icon"
                 className="w-6 h-6 rounded-full"
-                onError={(e) => {
-                  const imgElement = e.target as HTMLImageElement;
-                  imgElement.onerror = null;
-                  imgElement.style.display = 'none';
-                  imgElement.parentElement?.insertAdjacentHTML(
-                    'beforeend',
-                    `<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#ba5ae1]/90 to-[#4cc0ec]/90 flex items-center justify-center text-white font-bold">
-                  ${val.baseSymbol.charAt(0)}
-                </div>`
-                  );
-                }}
               />
             </li>
           ))}
