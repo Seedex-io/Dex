@@ -12,16 +12,51 @@ export const getTop10 = async () => {
 };
 
 export const getTrending = async () => {
-  return fetch(`${API}/getHotPairs`)
-    .then((response) => response.json())
-    .then((data) => {
-      return data;
-    })
-    .catch((err) => {
-      console.error(err);
+  try {
+    const res = await axios.get(`${API}/fetch-trending?chain_id=1`);
+
+    // Check if the response has the expected structure
+    if (res.data && res.data.success && res.data.data && Array.isArray(res.data.data.rows)) {
+      return res.data.data.rows.map((val: any) => ({
+        chain: val.chain,
+        pairHash: val.pairHash,
+        baseHash: val.baseHash,
+        baseSymbol: val.baseSymbol,
+        baseName: val.baseName,
+        baseIconTs: val.baseIconTs,
+        socials: val.socials,
+        verified: val.verified,
+        quoteHash: val.quoteHash,
+        quoteSymbol: val.quoteSymbol,
+        quoteName: val.quoteName,
+        quoteIconTs: val.quoteIconTs,
+        dexHash: val.dexHash,
+        dexName: val.dexName,
+        dexIconTs: val.dexIconTs,
+        price: val.price,
+        createdAt: val.createdAt,
+        discoveredAt: val.discoveredAt,
+        liquidity: val.liquidity,
+        marketCap: val.marketCap,
+        fdMarketCap: val.fdMarketCap,
+        volume: val.volume,
+        transactions: val.transactions,
+        makers: val.makers,
+        pc5m: val.pc5m,
+        pc1h: val.pc1h,
+        pc6h: val.pc6h,
+        pc24h: val.pc24h,
+      }));
+    } else {
+      console.error('Unexpected response format:', res.data);
       return [];
-    });
+    }
+  } catch (error) {
+    console.error('Error fetching trending data:', error);
+    return [];
+  }
 };
+
 
 export const getGainerList = async () => {
   try {
