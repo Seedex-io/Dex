@@ -5,11 +5,11 @@ import { searchToken } from '../../api/search';
 import { getTrending } from '../../api/tickerApi';
 import { formatNumber } from '../../utils/helpers/numberFormat';
 import Div from '../SimpleComponents/Div';
-import Img from '../SimpleComponents/Img';
-import logo from '../../assets/logo.png';
-
 import './styles.css';
 import themeTicker from './theme';
+import { getChainNameById } from '../../utils/chains';
+
+
 export default function TrendingTicker(props: any) {
   const { title, className } = props;
   const [data, setdata] = useState<any>([]);
@@ -47,18 +47,33 @@ export default function TrendingTicker(props: any) {
             >
               <Div>#{i + 1}</Div>
               <FontAwesomeIcon
-                icon={val.change > 0 ? faAngleUp : faAngleDown}
-                color={val.change > 0 ? 'green' : 'red'}
+                icon={val.pc24h > 0 ? faAngleUp : faAngleDown}
+                color={val.pc24h > 0 ? 'green' : 'red'}
               />
               <Div
                 style={{
-                  color: val.change > 0 ? 'green' : 'red',
+                  color: val.pc24h > 0 ? 'green' : 'red',
                 }}
               >
                 ${`${formatNumber(val.price)}`}
               </Div>
-              <Div>{`${val.symbol}`}</Div>
-              <Img src={val.src ? val.src : logo} alt="" className="imgTrending" />
+              <Div>{`${val.baseSymbol}`}</Div>
+              <img
+                src={`https://dd.dexscreener.com/ds-data/tokens/${getChainNameById(val.chain)}/${val.baseHash}.png`}
+                alt="icon"
+                className="w-6 h-6 rounded-full"
+                onError={(e) => {
+                  const imgElement = e.target as HTMLImageElement;
+                  imgElement.onerror = null;
+                  imgElement.style.display = 'none';
+                  imgElement.parentElement?.insertAdjacentHTML(
+                    'beforeend',
+                    `<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#ba5ae1]/90 to-[#4cc0ec]/90 flex items-center justify-center text-white font-bold">
+                  ${val.baseSymbol.charAt(0)}
+                </div>`
+                  );
+                }}
+              />
             </li>
           ))}
         </Div>
