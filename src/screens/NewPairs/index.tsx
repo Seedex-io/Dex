@@ -70,8 +70,10 @@ export default function NewPairs(props: any) {
   const [tokens, setTokens] = useState<Token[]>([]);
   const [filteredTokens, setFilteredTokens] = useState<Token[]>([]);
   const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [pageSize, setPageSize] = useState<number>(20); // Set initial page size
+  const [loading, setLoading] = useState<boolean>(false);
 
-  // Temporary state for filter inputs
   const [tempFilters, setTempFilters] = useState<FilterCriteria>({
     minVolume: null,
     maxVolume: null,
@@ -97,11 +99,16 @@ export default function NewPairs(props: any) {
   const [filters, setFilters] = useState<FilterCriteria>(tempFilters);
 
   useEffect(() => {
-    getNewPairs().then((data: Token[]) => {
-      setTokens(data);
-      setFilteredTokens(data);  // Initialize both tokens and filteredTokens
-    });
-  }, []);
+    fetchTokens(page);
+  }, [page]);
+
+  const fetchTokens = async (page: number) => {
+    setLoading(true);
+    const data = await getNewPairs(page);
+    setTokens((prevTokens) => [...prevTokens, ...data]);
+    setFilteredTokens((prevTokens) => [...prevTokens, ...data]);
+    setLoading(false);
+  };
 
   useEffect(() => {
     if (mobile) {
@@ -135,13 +142,11 @@ export default function NewPairs(props: any) {
       minTransactions,
       maxTransactions,
     } = filters;
-  
-    // Helper function to check if a value is within the specified range
+
     const withinRange = (value: number | null, min: number | null, max: number | null): boolean =>
       (min === null || (value ?? Number.MIN_VALUE) >= min) && 
       (max === null || (value ?? Number.MAX_VALUE) <= max);
-  
-    // Apply all filter criteria here
+
     return (
       withinRange(parseFloat(token.volume), minVolume, maxVolume) &&
       withinRange(parseFloat(token.price), minPrice, maxPrice) &&
@@ -150,20 +155,20 @@ export default function NewPairs(props: any) {
       withinRange(token.pc1h, minLast1hChange, maxLast1hChange) &&
       withinRange(token.pc6h, minLast6hChange, maxLast6hChange) &&
       withinRange(token.pc24h, minLast24hChange, maxLast24hChange) &&
-      withinRange(token.transactions, minTransactions, maxTransactions) &&
+      withinRange(parseInt(token.transactions.toString().replace(/,/g, '')), minTransactions, maxTransactions) &&
       withinRange(parseFloat(token.fdMarketCap), minFDV, maxFDV) &&
       (!dateRange.start || new Date(token.createdAt * 1000).getTime() >= new Date(dateRange.start).getTime()) &&
       (!dateRange.end || new Date(token.createdAt * 1000).getTime() <= new Date(dateRange.end).getTime())
     );
   };
-  
+
   const applyFilters = () => {
     const filtered = tokens.filter((token) => matchesFilter(token, filters));
     setFilteredTokens(filtered);
-  };  
+  };
 
   useEffect(() => {
-    applyFilters(); // Automatically re-filter whenever filters change
+    applyFilters();
   }, [filters, tokens]);
 
   const handleToggleNavbar = (open: boolean) => {
@@ -182,31 +187,39 @@ export default function NewPairs(props: any) {
   };
 
   const handleApplyFilters = () => {
-    setFilters(tempFilters); // Update actual filters
+    setFilters(tempFilters);
+  };
+
+  const handlePageChange = (newPage: number) => {
+    setPage(newPage + 1); // Increment page number
+  };
+
+  const handlePageSizeChange = (newPageSize: number) => {
+    setPageSize(newPageSize);
   };
 
   return (
     <>
       <BrowserView>
-        <LeftNavbar onToggle={handleToggleNavbar}/>
+        <LeftNavbar onToggle={handleToggleNavbar} />
       </BrowserView>
-      <div className={`${isNavbarOpen? 'ml-56':'ml-[65px]'}`}>
+      <div className={`${isNavbarOpen ? 'ml-56' : 'ml-[65px]'}`}>
         <SearchBar theme={theme} onChangeTheme={handleChangeTheme} />
-
-        <div className='px-3 mt-3'>
+        <div className="px-3 mt-3">
           <Filters filters={tempFilters} onFilterChange={updateTempFilter} onApply={handleApplyFilters} />
           <WarningMessage />
-
           <Div style={style} className="border-l-2 border-[#e867ea] rounded-[8px]" sx={themeNewPairs.container}>
             <div style={{ height: '1050px', overflowY: 'auto' }}>
               <DataGrid
                 rows={filteredTokens}
                 columns={columns}
                 getRowId={(row: Token) => row.pairHash}
-                pageSize={filteredTokens.length}
-                rowsPerPageOptions={[]}
+                pageSize={pageSize}
+                pagination
+                paginationMode="server"
+                onPageChange={handlePageChange}
+                onPageSizeChange={handlePageSizeChange}
                 disableColumnMenu
-                hideFooterPagination
                 headerHeight={40}
                 classes={{
                   columnHeader: 'flex items-center py-2 pl-3 pr-2 sm:py-3 border-r border-[rgb(74,42,80)]/40',
@@ -223,6 +236,7 @@ export default function NewPairs(props: any) {
                 }}
                 className="overflow-hidden"
               />
+              {loading && <div>Loading...</div>}
             </div>
           </Div>
         </div>
