@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserView } from 'react-device-detect';
 import LeftNavbar from '../../components/LeftNavbar';
 import SearchBar from '../../components/SearchBar';
-import { Collapse, Alert, AlertTitle, Select, MenuItem } from '@mui/material';
+import { Collapse, Alert, AlertTitle } from '@mui/material';
 import { fetchWhaleTrades } from '../../api/getTransactions';
 import NoLogo from '../../assets/n0n3.png';
 import Etherscan from '../../assets/etherscan-logo.webp'
@@ -18,6 +18,7 @@ import zrx from '../../assets/dex/zerox_exchange.svg';
 import pancakeswap from '../../assets/dex/pancakeswap.svg';
 import curve from '../../assets/dex/curve.svg';
 import SmallLoading from '../../components/SmallLoading';
+import { commaFormatted } from '../../utils/helpers/numberFormat';
 
 // Define logo mapping
 const dexLogoMap: Record<string, string> = {
@@ -43,7 +44,7 @@ interface DexTrade {
   tradeType: 'Buy' | 'Sell';
 }
 
-const chains = ['Ethereum', 'Binance Smart Chain', 'Polygon', 'Arbitrum'];
+const chains = ['ethereum', 'bsc', 'polygon', 'arbitrum'];
 const tradeSizes = ['10000', '50000', '100000', '500000', '1000000'];
 
 export default function WhaleTrackerPage(props: any) {
@@ -255,13 +256,8 @@ export default function WhaleTrackerPage(props: any) {
                         className="flex items-center gap-1.5 sm:gap-2"
                       >
                         <img
-                          src={`https://assets.coincap.io/assets/icons/${trade.baseCurrency.symbol.toLowerCase()}@2x.png`}
+                          src={`https://www.iconaves.com/token_icon/bsc/${trade.baseCurrency.address.toLowerCase()}.png`}
                           alt={trade.baseCurrency.symbol}
-                          onError={(e) => {
-                            const imgElement = e.target as HTMLImageElement;
-                            imgElement.onerror = null;
-                            imgElement.src = NoLogo;
-                          }}
                           className="h-8 w-8 rounded-full border-2 md:h-10 md:w-10 border-fuchsia-600"
                         />
                         <div className="flex flex-col md:gap-0.5">
@@ -273,11 +269,11 @@ export default function WhaleTrackerPage(props: any) {
                         </div>
                       </a>
                     </td>
-                    <td className="px-4 py-3 border border-fuchsia-950">
+                    <td className={`px-4 py-3 border border-fuchsia-950 ${trade.tradeType === 'Buy' ? 'text-green-400' : 'text-red-400'}`}>
                       {trade.tradeType}
                     </td>
-                    <td className="px-4 py-3 border border-fuchsia-950">
-                      ${formatNumber(trade.tradeAmount)}
+                    <td className={`px-4 py-3 border border-fuchsia-950 ${trade.tradeType === 'Buy' ? 'text-green-400' : 'text-red-400'}`}>
+                      ${commaFormatted(trade.tradeAmount)}
                     </td>
                     <td className="px-4 py-3 border border-fuchsia-950">
                       <a
