@@ -67,36 +67,36 @@ const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) =
                                     </span>
                                 </button>
                             </div>
-                            <div className="flex items-center flex-row gap-2">
+                            <div className="flex items-center flex-row">
                                 <div className="flex items-center">
-                                    <button type="button" className="inline-flex items-center justify-center user-select-none relative whitespace-nowrap align-middle outline outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md font-semibold transition-all duration-200 h-8 min-w-32 text-sm px-3 bg-fuchsia-200 text-fuchsia-900">
+                                    <a href="/Trending" className="inline-flex items-center justify-center user-select-none relative whitespace-nowrap align-middle outline outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md font-semibold transition-all duration-200 h-8 min-w-32 text-sm px-3 bg-fuchsia-200 text-fuchsia-900">
                                         <span className=" inline-flex items-center shrink-0 mr-1">
                                             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" focusable="false" className="w-3 h-3 inline-block flex-shrink-0 text-current" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M160 80c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V80zM0 272c0-26.5 21.5-48 48-48H80c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V272zM368 96h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H368c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48z"></path>
                                             </svg>
                                         </span>
                                         Trending
-                                    </button>
+                                    </a>
                                 </div>
                                 <div className="flex items-center">
-                                    <button type="button" className="inline-flex items-center justify-center user-select-none relative whitespace-nowrap align-middle outline outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md font-semibold transition-all duration-200 h-8 min-w-32 text-sm px-3 bg-fuchsia-200 text-fuchsia-900">
+                                    <a href="/Trending" className="inline-flex items-center justify-center user-select-none relative whitespace-nowrap align-middle outline outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md font-semibold transition-all duration-200 h-8 min-w-32 text-sm px-3 bg-fuchsia-200 text-fuchsia-900">
                                         <span className=" inline-flex items-center shrink-0 mr-1">
                                             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" focusable="false" className="w-3 h-3 inline-block flex-shrink-0 text-current" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path>
                                             </svg>
                                         </span>
                                         Gainers & Losers
-                                    </button>
+                                    </a>
                                 </div>
                                 <div className="flex items-center">
-                                    <button type="button" className="inline-flex items-center justify-center user-select-none relative whitespace-nowrap align-middle outline outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md font-semibold transition-all duration-200 h-8 min-w-32 text-sm px-3 bg-fuchsia-200 text-fuchsia-900">
+                                    <a href="/NewPairs" className="inline-flex items-center justify-center user-select-none relative whitespace-nowrap align-middle outline outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md font-semibold transition-all duration-200 h-8 min-w-32 text-sm px-3 bg-fuchsia-200 text-fuchsia-900">
                                         <span className=" inline-flex items-center shrink-0 mr-1">
                                             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" focusable="false" className="w-3 h-3 inline-block flex-shrink-0 text-current" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M64 96H0c0 123.7 100.3 224 224 224v144c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V320C288 196.3 187.7 96 64 96zm384-64c-84.2 0-157.4 46.5-195.7 115.2 27.7 30.2 48.2 66.9 59 107.6C424 243.1 512 147.9 512 32h-64z"></path>
                                             </svg>
                                         </span>
                                         New Pairs
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <div role="group" className=" pl-2 ml-auto inline-flex pr-1" data-attached="" data-orientation="horizontal">
@@ -111,7 +111,7 @@ const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) =
                                                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" focusable="false" className="w-3 h-3 inline-block flex-shrink-0 text-current" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"></path>
                                                 </svg>
-                                                <span className="md:block hidden">Trending 12H</span><span className="block md:hidden">Trend 12H</span>
+                                                <span className="md:block hidden">Pair Age</span><span className="block md:hidden">Trend 12H</span>
                                             </div>
                                         </div>
                                     </span>
