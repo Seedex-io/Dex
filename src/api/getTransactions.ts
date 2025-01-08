@@ -17,7 +17,6 @@ export const getTransactions = async (pairAddress: any, chain: any, tokenAddress
 
 export const fetchWhaleTrades = async () => {
   try {
-
     const query = {
       query: `
       {
@@ -52,7 +51,9 @@ export const fetchWhaleTrades = async () => {
             exchange {
               fullName
             }
-            tradeType: buyAmount
+            sellCurrency {
+              symbol
+            }
             buyCurrency {
               tokenId
             }
@@ -65,14 +66,18 @@ export const fetchWhaleTrades = async () => {
     const response = await axios.post(API_URL, query, {
       headers: {
         'Content-Type': 'application/json',
-        'X-API-KEY': API_KEY!,
+        'X-API-KEY': API_KEY,
       },
     });
 
-    return response.data?.data?.ethereum?.dexTrades.map((trade: any) => ({
-      ...trade,
-      tradeType: trade.baseAmount > trade.quoteAmount ? 'Buy' : 'Sell',
-    })) || [];
+    const trades = response.data?.data?.ethereum?.dexTrades || [];
+
+    // Add the type field to each trade
+    trades.forEach((trade: any) => {
+      trade.tradeType = trade.sellCurrency.symbol === trade.quoteCurrency.symbol ? 'Sell' : 'Buy';
+    });
+
+    return trades;
   } catch (error) {
     console.error('Error fetching whale trades:', error);
     return [];
