@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { BrowserView } from 'react-device-detect';
 import LeftNavbar from '../../components/LeftNavbar';
 import Div from '../../components/SimpleComponents/Div';
 import SearchBar from '../../components/SearchBar';
@@ -10,6 +9,7 @@ import './style.css';
 import themeNewPairs from './theme';
 import Filters from './filters';
 import WarningMessage from '../../components/WarningMsg';
+import Error from '../../components/error';
 
 interface Token {
   chain: number;
@@ -43,6 +43,8 @@ interface Token {
 }
 
 interface FilterCriteria {
+  chainId: number | null;
+  timeRange: string;
   minVolume: number | null;
   maxVolume: number | null;
   minPrice: number | null;
@@ -73,6 +75,8 @@ export default function TrendingPage(props: any) {
   const [loading, setLoading] = useState<boolean>(false);
 
   const [tempFilters, setTempFilters] = useState<FilterCriteria>({
+    chainId: null,
+    timeRange: '24h',
     minVolume: null,
     maxVolume: null,
     minPrice: null,
@@ -98,11 +102,12 @@ export default function TrendingPage(props: any) {
 
   useEffect(() => {
     fetchTokens();
-  }, []);
+  }, [filters.chainId]);
 
   const fetchTokens = async () => {
     setLoading(true);
-    const data = await getTrending();
+    const chainId = filters.chainId !== null ? filters.chainId : 0;
+    const data = await getTrending(chainId);
     setTokens(data);
     setFilteredTokens(data);
     setLoading(false);
@@ -142,7 +147,7 @@ export default function TrendingPage(props: any) {
     } = filters;
 
     const withinRange = (value: number | null, min: number | null, max: number | null): boolean =>
-      (min === null || (value ?? Number.MIN_VALUE) >= min) && 
+      (min === null || (value ?? Number.MIN_VALUE) >= min) &&
       (max === null || (value ?? Number.MAX_VALUE) <= max);
 
     return (
@@ -190,9 +195,7 @@ export default function TrendingPage(props: any) {
 
   return (
     <>
-      <BrowserView>
-        <LeftNavbar onToggle={handleToggleNavbar} />
-      </BrowserView>
+      <LeftNavbar onToggle={handleToggleNavbar} />
       <div className={`${isNavbarOpen ? 'ml-56' : 'ml-[65px]'}`}>
         <SearchBar theme={theme} onChangeTheme={handleChangeTheme} />
         <div className="px-3 mt-3">
@@ -206,6 +209,19 @@ export default function TrendingPage(props: any) {
                 getRowId={(row: Token) => row.pairHash}
                 disableColumnMenu
                 headerHeight={40}
+                loading={loading}
+                components={{
+                  NoRowsOverlay: () => (
+                    <span className="flex items-center justify-center h-full">
+                      <Error />
+                    </span>
+                  ),
+                  NoResultsOverlay: () => (
+                    <span className="flex items-center justify-center h-full">
+                      <Error />
+                    </span>
+                  )
+                }}
                 classes={{
                   columnHeader: 'flex items-center py-2 pl-3 pr-2 sm:py-3 border-r border-[rgb(74,42,80)]/40',
                   columnHeaderTitleContainer: 'token_explorer_column_header_title_container',
@@ -221,7 +237,6 @@ export default function TrendingPage(props: any) {
                 }}
                 className="overflow-hidden"
               />
-              {loading && <div>Loading...</div>}
             </div>
           </Div>
         </div>

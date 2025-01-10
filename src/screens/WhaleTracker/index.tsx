@@ -19,6 +19,8 @@ import pancakeswap from '../../assets/dex/pancakeswap.svg';
 import curve from '../../assets/dex/curve.svg';
 import SmallLoading from '../../components/SmallLoading';
 import { commaFormatted } from '../../utils/helpers/numberFormat';
+import { getdexLogo } from '../../utils/dexs';
+import { CalendarMonth } from '@mui/icons-material';
 
 // Define logo mapping
 const dexLogoMap: Record<string, string> = {
@@ -40,7 +42,7 @@ interface DexTrade {
   quoteAmount: number;
   quoteCurrency: { name: any; symbol: string };
   tradeAmount: number;
-  exchange: { fullName: string };
+  exchange: { fullName: string; address: { address: string } };
   tradeType: 'Buy' | 'Sell';
 }
 
@@ -232,6 +234,7 @@ export default function WhaleTrackerPage(props: any) {
                     onClick={() => setShowRelativeTime(!showRelativeTime)}
                   >
                     Age
+                    <CalendarMonth className="!w-5 !h-5 ml-1" />
                   </th>
                   <th className="px-4 py-3 text-left text-sm font-semibold border border-fuchsia-950">
                     Exchange
@@ -255,11 +258,19 @@ export default function WhaleTrackerPage(props: any) {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 sm:gap-2"
                       >
-                        <img
-                          src={`https://www.iconaves.com/token_icon/bsc/${trade.baseCurrency.address.toLowerCase()}.png`}
-                          alt={trade.baseCurrency.symbol}
-                          className="h-8 w-8 rounded-full border-2 md:h-10 md:w-10 border-fuchsia-600"
-                        />
+                        <div className="relative w-10 h-10">
+                          <img
+                            src={`https://www.iconaves.com/token_icon/eth/${trade.baseCurrency.address.toLowerCase()}.png`}
+                            alt={NoLogo}
+                            className="h-8 w-8 rounded-full border-2 md:h-10 md:w-10 border-fuchsia-600"
+                          />
+                          <img
+                            src={getdexLogo(trade.exchange.address.address)}
+                            alt="chain icon"
+                            className="w-4 h-4 rounded-full absolute bottom-0 right-0 bg-white p-[1px]"
+                          />
+
+                        </div>
                         <div className="flex flex-col md:gap-0.5">
                           <div className="flex items-center gap-2">
                             <p className="one-line text-[13px] font-bold text-white">{trade.baseCurrency.symbol}</p>

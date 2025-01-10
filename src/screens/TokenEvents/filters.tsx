@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Modal, Select, MenuItem } from '@mui/material';
+import React, { useState } from 'react';
+import { Modal, Box } from '@mui/material';
 import Filtermodal from './filtermodal';
-import { getChainLogo } from '../../utils/chains';
 
 interface DateRange {
     start: string | null;
@@ -9,7 +8,6 @@ interface DateRange {
 }
 
 interface FilterCriteria {
-    chainId: number | null;
     minVolume: number | null;
     maxVolume: number | null;
     minPrice: number | null;
@@ -37,36 +35,6 @@ interface FiltersProps {
     onApply: () => void;
 }
 
-const chainOptions = [
-    { id: 0, name: 'All Networks', getChainLogo: getChainLogo(0) },
-    { id: 1, name: 'Ethereum', getChainLogo: getChainLogo(1) },
-    { id: 56, name: 'BNB Chain', getChainLogo: getChainLogo(56) },
-    { id: 137, name: 'Polygon', getChainLogo: getChainLogo(137) },
-    { id: 1399811149, name: 'Solana', getChainLogo: getChainLogo(1399811149) },
-    { id: 8453, name: 'Base', getChainLogo: getChainLogo(8453) },
-    { id: 10, name: 'Optimism', getChainLogo: getChainLogo(10) },
-    { id: 14, name: 'Flare', getChainLogo: getChainLogo(14) },
-    { id: 100, name: 'Gnosis', getChainLogo: getChainLogo(100) },
-    { id: 109, name: 'Shibarium', getChainLogo: getChainLogo(109) },
-    { id: 42220, name: 'Celo', getChainLogo: getChainLogo(42220) },
-    { id: 43114, name: 'Avalanche', getChainLogo: getChainLogo(43114) },
-    { id: 47763, name: 'Neo X', getChainLogo: getChainLogo(47763) },
-    { id: 57073, name: 'Ink', getChainLogo: getChainLogo(57073) },
-    { id: 59144, name: 'Linea', getChainLogo: getChainLogo(59144) },
-    { id: 81457, name: 'Blast', getChainLogo: getChainLogo(81457) }, // Placeholder ID
-    { id: 534352, name: 'Scroll', getChainLogo: getChainLogo(534352) }, // Placeholder ID
-    { id: 666666666, name: 'Degen', getChainLogo: getChainLogo(666666666) }, // Placeholder ID
-    { id: 196, name: 'OKX', getChainLogo: getChainLogo(196) },
-    { id: 250, name: 'Fantom', getChainLogo: getChainLogo(250) },
-    { id: 747, name: 'Flow', getChainLogo: getChainLogo(747) }, // Placeholder ID
-    { id: 1088, name: 'Metis', getChainLogo: getChainLogo(1088) },
-    { id: 1116, name: 'Core', getChainLogo: getChainLogo(1116) },
-    { id: 1209, name: 'Saitachain', getChainLogo: getChainLogo(1209) }, // Placeholder ID
-    { id: 1284, name: 'Moonbeam', getChainLogo: getChainLogo(1284) },
-    { id: 5000, name: 'Mantle', getChainLogo: getChainLogo(5000) },
-    { id: 34443, name: 'Mode', getChainLogo: getChainLogo(34443) } // Placeholder ID
-];
-
 const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) => {
     const [open, setOpen] = useState(false);
 
@@ -78,16 +46,10 @@ const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) =
         handleClose();
     };
 
-    useEffect(() => {
-        if (filters.chainId !== null) {
-            onApply();
-        }
-    }, [filters.chainId]);
-
     return (
         <>
             <div className="text-white">
-                <div className="flex w-full overflow-x-hidden" style={{ position: 'relative' }}>
+                <div className="flex w-full md:overflow-x-hidden" style={{ position: 'relative' }}>
                     <div className="flex w-full overflow-x-hidden">
                         <div className="flex-1 flex w-full gap-2 py-2">
                             <div className="2xl:mr-2">
@@ -107,41 +69,13 @@ const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) =
                             </div>
                             <div className="flex items-center flex-row">
                                 <div className="flex items-center">
-                                    <a href="/Trending" className="inline-flex items-center justify-center user-select-none relative whitespace-nowrap align-middle outline outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md font-semibold transition-all duration-200 h-8 min-w-32 text-sm pl-3 pr-2 bg-fuchsia-200 text-fuchsia-900">
+                                    <a href="/Trending" className="inline-flex items-center justify-center user-select-none relative whitespace-nowrap align-middle outline outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md font-semibold transition-all duration-200 h-8 min-w-32 text-sm px-3 bg-fuchsia-200 text-fuchsia-900">
                                         <span className=" inline-flex items-center shrink-0 mr-1">
-                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" focusable="false" className="w-4 h-4 inline-block leading-4 flex-shrink-0 text-current" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"></path></svg>
+                                            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" focusable="false" className="w-3 h-3 inline-block flex-shrink-0 text-current" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M160 80c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V80zM0 272c0-26.5 21.5-48 48-48H80c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V272zM368 96h32c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48H368c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48z"></path>
+                                            </svg>
                                         </span>
                                         Trending
-                                    <div className="flex items-center flex-row gap-1 pl-2 pr-1">
-                                        <button
-                                            type="button"
-                                            className="inline-flex appearance-none items-center justify-center select-none relative whitespace-nowrap align-middle outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md transition-all h-6 min-w-6 text-xs px-2 bg-fuchsia-900 text-white font-semibold"
-                                            value="trending:m5"
-                                        >
-                                            5M
-                                        </button>
-                                        <button
-                                            type="button"
-                                            className="inline-flex appearance-none items-center justify-center select-none relative whitespace-nowrap align-middle outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md transition-all h-6 min-w-6 text-xs px-2 bg-fuchsia-900 text-white font-semibold"
-                                            value="trending:h1"
-                                        >
-                                            1H
-                                        </button>
-                                        <button
-                                            type="button"
-                                            className="inline-flex appearance-none items-center justify-center select-none relative whitespace-nowrap align-middle outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md transition-all h-6 min-w-6 text-xs px-2 bg-fuchsia-900 text-white font-semibold"
-                                            value="trending:h6"
-                                        >
-                                            6H
-                                        </button>
-                                        <button
-                                            type="button"
-                                            className="inline-flex appearance-none items-center justify-center select-none relative whitespace-nowrap align-middle outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md transition-all h-6 min-w-6 text-xs px-2 bg-fuchsia-900 text-white font-semibold"
-                                            value="trending:h24"
-                                        >
-                                            24H
-                                        </button>
-                                    </div>
                                     </a>
                                 </div>
                                 <div className="flex items-center">
@@ -165,77 +99,7 @@ const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) =
                                     </a>
                                 </div>
                             </div>
-                            <div role="group" className="pl-2 ml-auto inline-flex pr-1" data-attached="" data-orientation="horizontal">
-                                <Select
-                                    value={filters.chainId || ''}
-                                    onChange={(e) => onFilterChange('chainId', e.target.value)}
-                                    sx={{
-                                        "& .MuiSvgIcon-root": {
-                                            color: 'white',
-                                        },
-                                    }}
-                                    displayEmpty
-                                    renderValue={(selected) => {
-                                        const selectedOption = chainOptions.find((option) => option.id === selected);
-                                        return (
-                                            <div
-                                                style={{
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    gap: '8px',
-                                                    whiteSpace: 'nowrap',
-                                                    overflow: 'hidden',
-                                                    textOverflow: 'ellipsis',
-                                                    color: 'white', // Ensure the text in the selected value is white
-                                                }}
-                                            >
-                                                {selectedOption?.getChainLogo && (
-                                                    <img
-                                                        src={selectedOption.getChainLogo}
-                                                        alt={selectedOption.name}
-                                                        style={{ width: '20px', height: '20px' }}
-                                                    />
-                                                )}
-                                                {selectedOption?.name || 'Select Chain'}
-                                            </div>
-                                        );
-                                    }}
-                                    MenuProps={{
-                                        PaperProps: {
-                                            style: {
-                                                maxHeight: 300,
-                                                width: 200,
-                                                marginTop: 10,
-                                                backgroundColor: '#220b26', // Optional: Change the menu background for better contrast
-                                                color: 'white', // Set menu text color to white
-                                            },
-                                        },
-                                    }}
-                                    style={{
-                                        minWidth: 200,
-                                        maxWidth: '100%',
-                                        color: 'white', // Ensure the text color for the select is white
-                                    }}
-                                    className='border border-fuchsia-400/80 px-3 mr-2 rounded-md'
-                                    inputProps={{
-                                        style: {
-                                            color: 'white',
-                                        },
-                                    }}
-                                >
-                                    {chainOptions.map((chain) => (
-                                        <MenuItem key={chain.id} value={chain.id}>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                                <img
-                                                    src={chain.getChainLogo}
-                                                    alt={chain.name}
-                                                    style={{ width: '20px', height: '20px' }}
-                                                />
-                                                {chain.name}
-                                            </div>
-                                        </MenuItem>
-                                    ))}
-                                </Select>
+                            <div role="group" className=" pl-2 ml-auto inline-flex pr-1" data-attached="" data-orientation="horizontal">
                                 <button type="button" className="ps-3 pe-3 rounded-tr-none rounded-br-none inline-flex h-8 items-center justify-center relative whitespace-nowrap align-middle rounded-md border border-fuchsia-400/80 text-white/90" id="menu-button-:Rd99kipk2qmauH1:" aria-expanded="false" aria-haspopup="menu" aria-controls="menu-list-:Rd99kipk2qmauH1:">
                                     <span className="flex-1 min-w-0">
                                         <div className="flex items-center flex-row gap-1">
@@ -247,7 +111,7 @@ const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) =
                                                 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" focusable="false" className="w-3 h-3 inline-block flex-shrink-0 text-current" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"></path>
                                                 </svg>
-                                                <span className="md:block hidden">Trending 24H</span><span className="block md:hidden">Trend 12H</span>
+                                                <span className="md:block hidden">Pair Age</span><span className="block md:hidden">Trend 12H</span>
                                             </div>
                                         </div>
                                     </span>

@@ -64,7 +64,7 @@ interface FilterCriteria {
   maxTransactions: number | null;
 }
 
-export default function NewPairs(props: any) {
+export default function TokenEvents(props: any) {
   const { theme, mobile } = props;
   const [style, setStyle] = useState<any>({});
   const [tokens, setTokens] = useState<Token[]>([]);
@@ -200,6 +200,7 @@ export default function NewPairs(props: any) {
 
   return (
     <>
+
       <LeftNavbar onToggle={handleToggleNavbar} />
       <div className={`${isNavbarOpen ? 'ml-56' : 'ml-[65px]'}`}>
         <SearchBar theme={theme} onChangeTheme={handleChangeTheme} />

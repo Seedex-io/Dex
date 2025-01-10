@@ -1,0 +1,209 @@
+@media screen and (max-width: 768px) {
+  .new_pairs {
+    margin-left: 0px;
+    margin-top: 150px;
+    min-width: 1000px;
+  }
+
+
+  .token_explorer_title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding-left: 20px;
+    margin-top: 1rem;
+  }
+}
+
+.token_explorer_column_separator {
+  display: none;
+  /* Removes column separators for a cleaner look */
+}
+
+.token_explorer_subtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding-left: 20px;
+  margin-top: 1rem;
+}
+
+.token_explorer_pool_created_at {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.token_explorer {
+  width: calc(100% - 50px);
+  margin-left: auto;
+  padding-left: 20px;
+  margin-bottom: 70px;
+}
+
+.token_explorer_symbol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.token_explorer_symbol_icon {
+  width: 30px;
+  border-radius: 25px;
+}
+
+.token_explorer_symbol_name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.dollar {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff70;
+}
+
+.token_explorer_volume_usd {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.token_explorer_price_usd {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.token_explorer_price_move {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+}
+
+.token_explorer_up {
+  color: #3aeab5;
+  font-weight: 500;
+}
+
+.token_explorer_down {
+  color: #ff646d;
+  font-weight: 500;
+}
+
+.token_explorer_price_usd_max {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  width: 100%;
+}
+
+.token_explorer_price_usd_max_delta {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.token_explorer_token_supply {
+  font-size: 12px;
+}
+
+.token_explorer_holders_count {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+  outline: none !important;
+}
+
+.token_explorer_root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.token_explorer_footer_container {
+  display: none;
+  border: none !important;
+}
+
+.token_explorer_column_separator {
+  display: none !important;
+}
+
+.token_explorer_table_root {
+  border: none !important;
+  font-family: Arial, sans-serif;
+}
+
+.token_explorer_column_header_title_container,
+.token_explorer_column_headers {
+  border: none !important;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bolder;
+  background-color: rgb(20, 1, 20);
+}
+
+.token_explorer_cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid rgba(74, 42, 80, 0.4) !important;
+}
+
+.token_explorer_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+
+.MuiToolbar-root {
+  color: #ffffff;
+}
+
+.feature-add {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  -webkit-padding-start: 3px;
+  padding-inline-start: 3px;
+  -webkit-padding-end: 3px;
+  padding-inline-end: 3px;
+  font-size: 10px;
+  background: #a4cf5e;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 0.375rem;
+}
+
+.bg-rebrand-grad {
+  background-image: linear-gradient(87.71deg, #e867ea 3.28%, #72a2ff 114.54%);
+}
