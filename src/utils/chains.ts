@@ -4,16 +4,197 @@ import ether from '../assets/chain/ether.png';
 import polygon from '../assets/chain/polygon.webp';
 import solana from '../assets/chain/solana.webp';
 import arbitrum from '../assets/chain/arbitrum.webp';
-import factom from '../assets/chain/bsc.png';
-//
+import linea from '../assets/chain/linea.png';
+import neox from '../assets/chain/neox.png';
+import okx from '../assets/chain/okx.png';
+import celo from '../assets/chain/celo.png';
+import avalanche from '../assets/chain/avalanche.png';
+import fantom from '../assets/chain/fantom.png';
+import metis from '../assets/chain/metis.png';
+import moonbeam from '../assets/chain/moonbeam.png';
+import optimism from '../assets/chain/optimism.png';
+import shibarium from '../assets/chain/shibarium.png';
+import scroll from '../assets/chain/scroll.png';
+import degen from '../assets/chain/degen.png';
+import flow from '../assets/chain/flow.png';
+import saitachain from '../assets/chain/saitanchain.png';
+import mode from '../assets/chain/mode.png';
+import flare from '../assets/chain/flare.png';
+import ink from '../assets/chain/ink.png';
+import core from '../assets/chain/core.png';
+import mantle from '../assets/chain/mantle.png';
+import gnosis from '../assets/chain/gnosis.png';
+import blast from '../assets/chain/blast.png';
+import allnetworks from '../assets/chain/allnetworks.svg';
 
 const CHAINS = [
+  {
+    id: 'allnetworks',
+    chain_identifier: 0,
+    name: 'All Networks',
+    shortname: 'All Networks',
+    logo: allnetworks,
+  },
+  {
+    id: 'base',
+    chain_identifier: 8453,
+    name: 'Base',
+    shortname: 'Base',
+    logo: base,
+  },
+  {
+    id: 'optimism',
+    chain_identifier: 10,
+    name: 'Optimism',
+    shortname: 'Optimism',
+    logo: optimism,
+  },
+  {
+    id: 'flare',
+    chain_identifier: 14,
+    name: 'Flare',
+    shortname: 'Flare',
+    logo: flare, // Assuming mode.png is the correct logo
+  },
+  {
+    id: 'gnosis',
+    chain_identifier: 100,
+    name: 'Gnosis',
+    shortname: 'Gnosis',
+    logo: gnosis, // Placeholder: Update if needed
+  },
+  {
+    id: 'shibarium',
+    chain_identifier: 109,
+    name: 'Shibarium',
+    shortname: 'Shibarium',
+    logo: shibarium,
+  },
+  {
+    id: 'celo',
+    chain_identifier: 42220,
+    name: 'Celo',
+    shortname: 'Celo',
+    logo: celo,
+  },
+  {
+    id: 'avalanche',
+    chain_identifier: 43114,
+    name: 'Avalanche',
+    shortname: 'Avalanche',
+    logo: avalanche,
+  },
+  {
+    id: 'neox',
+    chain_identifier: 47763,
+    name: 'Neo X',
+    shortname: 'Neo X',
+    logo: neox,
+  },
+  {
+    id: 'ink',
+    chain_identifier: 57073,
+    name: 'Ink',
+    shortname: 'Ink',
+    logo: ink,
+  },
+  {
+    id: 'linea',
+    chain_identifier: 59144,
+    name: 'Linea',
+    shortname: 'Linea',
+    logo: linea,
+  },
+  {
+    id: 'blast',
+    chain_identifier: 81457,
+    name: 'Blast',
+    shortname: 'Blast',
+    logo: blast, // Placeholder: Update if needed
+  },
+  {
+    id: 'scroll',
+    chain_identifier: 534352,
+    name: 'Scroll',
+    shortname: 'Scroll',
+    logo: scroll,
+  },
+  {
+    id: 'degen',
+    chain_identifier: 666666666,
+    name: 'Degen',
+    shortname: 'Degen',
+    logo: degen,
+  },
+  {
+    id: 'okx',
+    chain_identifier: 196,
+    name: 'OKX',
+    shortname: 'OKX',
+    logo: okx,
+  },
+  {
+    id: 'fantom',
+    chain_identifier: 250,
+    name: 'Fantom',
+    shortname: 'Fantom',
+    logo: fantom,
+  },
+  {
+    id: 'flow',
+    chain_identifier: 747,
+    name: 'Flow',
+    shortname: 'Flow',
+    logo: flow,
+  },
+  {
+    id: 'metis',
+    chain_identifier: 1088,
+    name: 'Metis',
+    shortname: 'Metis',
+    logo: metis,
+  },
+  {
+    id: 'core',
+    chain_identifier: 1116,
+    name: 'Core',
+    shortname: 'Core',
+    logo: core,
+  },
+  {
+    id: 'saitachain',
+    chain_identifier: 1209,
+    name: 'Saitachain',
+    shortname: 'Saitachain',
+    logo: saitachain,
+  },
+  {
+    id: 'moonbeam',
+    chain_identifier: 1284,
+    name: 'Moonbeam',
+    shortname: 'Moonbeam',
+    logo: moonbeam,
+  },
+  {
+    id: 'mantle',
+    chain_identifier: 5000,
+    name: 'Mantle',
+    shortname: 'Mantle',
+    logo: mantle,
+  },
+  {
+    id: 'mode',
+    chain_identifier: 34443,
+    name: 'Mode',
+    shortname: 'Mode',
+    logo: mode, // Assuming mode.png is the correct logo
+  },
   {
     id: 'factom',
     chain_identifier: null,
     name: 'Factom',
     shortname: '',
-    logo: factom,
+    logo: fantom,
   },
   {
     id: 'openledger',

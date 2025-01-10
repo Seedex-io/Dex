@@ -11,9 +11,9 @@ export const getTop10 = async () => {
   }
 };
 
-export const getTrending = async () => {
+export const getTrending = async (chainId: number) => {
   try {
-    const res = await axios.get(`${API}/fetch-trending?chain_id=1`);
+    const res = await axios.get(`${API}/fetch-trending?chain_id=${chainId}`);
 
     // Check if the response has the expected structure
     if (res.data && res.data.success && res.data.data && Array.isArray(res.data.data.rows)) {

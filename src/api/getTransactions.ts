@@ -23,7 +23,7 @@ export const fetchWhaleTrades = async () => {
         ethereum(network: ethereum) {
           dexTrades(
             options: {limit: 100, desc: "timeInterval.minute"}
-            tradeAmountUsd: {gt: 30000, lt: 50000}
+            tradeAmountUsd: {gt: 10000, lt: 50000}
             quoteCurrency: {in: ["WETH", "USDC"]}
             baseCurrency: {notIn: ["ETH", "WETH", "USDC", "DAI", "USDT", "WBTC"]}
           ) {
@@ -50,6 +50,9 @@ export const fetchWhaleTrades = async () => {
             tradeAmount(in: USD)
             exchange {
               fullName
+              address{
+                address
+              }
             }
             sellCurrency {
               symbol

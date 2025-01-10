@@ -1,0 +1,1329 @@
+[
+    {
+        "name": "Danny",
+        "address": "9FNz4MjPUmnJqTf6yEDbL1D4SsHVh7uA8zRHhR5K138r",
+        "emoji": "🧙🏻‍♂",
+        "tags": []
+    },
+    {
+        "name": "mafia",
+        "address": "GxNa3Fza4e3GSDqccT978EuheTwu7af3DaB6JkqPtjU5",
+        "emoji": "🧬",
+        "tags": []
+    },
+    {
+        "name": "yog",
+        "address": "9fR8gerfvGSycFGbK2VY1PFrPuU9jS6QM47S974yTUHC",
+        "emoji": "🧑🏻‍🎤",
+        "tags": []
+    },
+    {
+        "name": "Cozy",
+        "address": "GKT2j5gPqY2ZKfhaGB5cn5bTHLSKTUrULe8wG1QwmLpt",
+        "emoji": "🧑🏿‍🦽‍➡️",
+        "tags": []
+    },
+    {
+        "name": "Blob1",
+        "address": "7DCYBoCuLWwYaQHhXxv6F6SV5ZAmnuhR1oucNYgVZWLa",
+        "emoji": "🙅🏻‍♂",
+        "tags": []
+    },
+    {
+        "name": "maestro",
+        "address": "45yBcpnzFTqLYQJtjxsa1DdZkgrTYponCg6yLQ6LQPu6",
+        "emoji": "🫵🏾",
+        "tags": []
+    },
+    {
+        "name": "Grandfnf7",
+        "address": "RH6epK9UW5vA5rm23FcLi4rPuTJjwya6UQJeG1tigv3",
+        "emoji": "🗞️",
+        "tags": []
+    },
+    {
+        "name": "Grandfnf6",
+        "address": "BrNoqdHUCcv9yTncnZeSjSov8kqhpmzv1nAiPbq1M95H",
+        "emoji": "🍿",
+        "tags": []
+    },
+    {
+        "name": "Grandfnf5",
+        "address": "7SDs3PjT2mswKQ7Zo4FTucn9gJdtuW4jaacPA65BseHS",
+        "emoji": "🏊‍♀",
+        "tags": []
+    },
+    {
+        "name": "Grandfnf4",
+        "address": "2huXTbjeBhtMZ1ugNwUGucYBRasRaaiypymUX6P1Kwjx",
+        "emoji": "👩🏼‍🦼",
+        "tags": []
+    },
+    {
+        "name": "Grandfnf3",
+        "address": "86AArCufuDZ1bUYjjdfAbDLM7HFdkeeMhTbsEeEHXQAR",
+        "emoji": "🙋‍♂️",
+        "tags": []
+    },
+    {
+        "name": "Grandfnf2",
+        "address": "FVxeFYgyT4GC6D7gaLkMSu2qtSJfw2N4RVPZowi2A64Y",
+        "emoji": "💰",
+        "tags": []
+    },
+    {
+        "name": "Grandfnf1",
+        "address": "DGPYpCdiVg2shab2TnNiZ2RnsjBQSmhgN71hJyWC5cYn",
+        "emoji": "🕙",
+        "tags": []
+    },
+    {
+        "name": "Blob3",
+        "address": "4EsY8HQB4Ak65diFrSHjwWhKSGC8sKmnzyusM993gk2w",
+        "emoji": "🦵",
+        "tags": []
+    },
+    {
+        "name": "Blob5",
+        "address": "2vkYVxq7HqrB2dzUH4VQ28wGAzv5c6ySt5uqPss5rGTJ",
+        "emoji": "🧑🏾‍🦼‍➡",
+        "tags": []
+    },
+    {
+        "name": "Blob7",
+        "address": "5afSYA7JRyTvpbiypNjTMj6SsYAopXjvZwSPpx6ZzdiU",
+        "emoji": "🍄‍",
+        "tags": []
+    },
+    {
+        "name": "Sink",
+        "address": "6BJ8YTiiDdSxy7RNLHd4hurmvUjreRFoxLGKYftAGb4x",
+        "emoji": "🦸🏼",
+        "tags": []
+    },
+    {
+        "name": "killz",
+        "address": "HrTZPWV4ZPebBiwyzoTBajCD49kQqVwf4dwsLuYG8CXX",
+        "emoji": "👩🏼‍❤️‍👨🏼",
+        "tags": []
+    },
+    {
+        "name": "Devistiny",
+        "address": "5qvLmTd6yKMn7T7DP6RPPcASBH231Rtvjta1Pzao48PR",
+        "emoji": "🙋🏼‍♀️",
+        "tags": []
+    },
+    {
+        "name": "Kenzo",
+        "address": "ECCKBDWX3MkEcf3bULbLBb9FvrEQLsmPMFTKFpvjzqgP",
+        "emoji": "🤱🏿",
+        "tags": []
+    },
+    {
+        "name": "ROwdy",
+        "address": "DKgvpfttzmJqZXdavDwTxwSVkajibjzJnN2FA99dyciK",
+        "emoji": "❤️",
+        "tags": []
+    },
+    {
+        "name": "Qwerky",
+        "address": "CPydqKcEEeKTR6wt3L15G8S5Ea4bxjS2vvjiW9vw1UwK",
+        "emoji": "👩🏻‍❤️‍👩🏾",
+        "tags": []
+    },
+    {
+        "name": "Profiteer",
+        "address": "FbvUU5qvD9JsU9jp3KDweCpZiVZHLoQBQ1PPCAAbd6FB",
+        "emoji": "😊",
+        "tags": []
+    },
+    {
+        "name": "Insentos",
+        "address": "3tc4BVAdzjr1JpeZu6NAjLHyp4kK3iic7TexMBYGJ4Xk",
+        "emoji": "🤸🏽‍♂️",
+        "tags": []
+    },
+    {
+        "name": "Beast",
+        "address": "B3wagQZiZU2hKa5pUCj6rrdhWsX3Q6WfTTnki9PjwzMh",
+        "emoji": "🔼",
+        "tags": []
+    },
+    {
+        "name": "GorillaCap",
+        "address": "DpNVrtA3ERfKzX4F8Pi2CVykdJJjoNxyY5QgoytAwD26",
+        "emoji": "🤹‍♂",
+        "tags": []
+    },
+    {
+        "name": "Spuno",
+        "address": "GfXQesPe3Zuwg8JhAt6Cg8euJDTVx751enp9EQQmhzPH",
+        "emoji": "🧑🏿‍🏭",
+        "tags": []
+    },
+    {
+        "name": "mercy",
+        "address": "F5jWYuiDLTiaLYa54D88YbpXgEsA6NKHzWy4SN4bMYjt",
+        "emoji": "🌥️",
+        "tags": []
+    },
+    {
+        "name": "Polar",
+        "address": "GTvBQnRvAPweU2qmYg8MDLND2PAAyYFKe35aKQGMRDaL",
+        "emoji": "💑🏿",
+        "tags": []
+    },
+    {
+        "name": "-$ Assasin.eth",
+        "address": "6LChaYRYtEYjLEHhzo4HdEmgNwu2aia8CM8VhR9wn6n7",
+        "emoji": "👧🏽",
+        "tags": []
+    },
+    {
+        "name": "NYM?",
+        "address": "694X5Cuvx6xs4y2aDBu5U1RkZS4RTbcUCZ8qLbH7bVPc",
+        "emoji": "👩🏿‍🦲",
+        "tags": []
+    },
+    {
+        "name": "pullup",
+        "address": "981G4w1e6zSiy6gBtYLGdFjF7rmFgAXXgA3mgKwPzwyS",
+        "emoji": "🏊🏾‍♂",
+        "tags": []
+    },
+    {
+        "name": "-$ tobi",
+        "address": "HdxkiXqeN6qpK2YbG51W23QSWj3Yygc1eEk2zwmKJExp",
+        "emoji": "👩🏼‍🦲",
+        "tags": []
+    },
+    {
+        "name": "Orangie",
+        "address": "26kZ9rg8Y5pd4j1tdT4cbT8BQRu5uDbXkaVs3L5QasHy",
+        "emoji": "🏋🏻‍♀",
+        "tags": []
+    },
+    {
+        "name": "Frank Alt",
+        "address": "AbcX4XBm7DJ3i9p29i6sU8WLmiW4FWY5tiwB9D6UBbcE",
+        "emoji": "👼🏿",
+        "tags": []
+    },
+    {
+        "name": "Staqi",
+        "address": "3rSZJHysEk2ueFVovRLtZ8LGnQBMZGg96H2Q4jErspAF",
+        "emoji": "🦸🏽‍♀",
+        "tags": []
+    },
+    {
+        "name": "Nach",
+        "address": "9jyqFiLnruggwNn4EQwBNFXwpbLM9hrA4hV59ytyAVVz",
+        "emoji": "🕜",
+        "tags": []
+    },
+    {
+        "name": "-$ Cupsey",
+        "address": "suqh5sHtr8HyJ7q8scBimULPkPpA557prMG47xCHQfK",
+        "emoji": "🤸🏼",
+        "tags": [
+            "AI"
+        ]
+    },
+    {
+        "name": "Luci",
+        "address": "DrwHXMZqsPhfqZw8GpqNvTYq9Vgh3ch3u9AqSVBN13yG",
+        "emoji": "🤚🏾",
+        "tags": []
+    },
+    {
+        "name": "Frank",
+        "address": "CRVidEDtEUTYZisCxBZkpELzhQc9eauMLR3FWg74tReL",
+        "emoji": "🚠",
+        "tags": []
+    },
+    {
+        "name": "FishFish",
+        "address": "ARSdp5MFL1bjgWddK8dkF3QdttHvy5ZdVjJ6T8BHJimo",
+        "emoji": "🧑🏼‍⚕️",
+        "tags": []
+    },
+    {
+        "name": "GME",
+        "address": "2PBRmZuPxeLAAmyHLCLQgikB5HGP1Y7mLzg6KpNNVJ16",
+        "emoji": "🧚🏾‍♀️",
+        "tags": []
+    },
+    {
+        "name": "DJT",
+        "address": "7Bffdhza5V7zBK7EyEQ5eFQ4fkxvutjMsiJjJUs9ZfkC",
+        "emoji": "👩🏿‍🍼",
+        "tags": []
+    },
+    {
+        "name": "Jake",
+        "address": "4SbDMrX8Zfj7qZtRKTBSQEavPkc7BP1kiJfT2f3dn8RL",
+        "emoji": "🤷🏽",
+        "tags": []
+    },
+    {
+        "name": "Fletch",
+        "address": "ELSyW68qyAToytdaMkyQhgGL9FErGimoPA27AgingJtE",
+        "emoji": "🚅",
+        "tags": []
+    },
+    {
+        "name": "-$ Waddles",
+        "address": "73LnJ7G9ffBDjEBGgJDdgvLUhD5APLonKrNiHsKDCw5B",
+        "emoji": "👮‍♀️",
+        "tags": []
+    },
+    {
+        "name": "CatClaws",
+        "address": "8deJ9xeUvXSJwicYptA9mHsU2rN2pDx37KWzkDkEXhU6",
+        "emoji": "🏃‍♀‍➡️",
+        "tags": [
+            "Trash"
+        ]
+    },
+    {
+        "name": "Ferb",
+        "address": "m7Kaas3Kd8FHLnCioSjCoSuVDReZ6FDNBVM6HTNYuF7",
+        "emoji": "🛁",
+        "tags": []
+    },
+    {
+        "name": "Ne0n",
+        "address": "3jN1M8gWLk2ryTGnscrcwRK1Gy4Ttzq5QizWT8uizZsT",
+        "emoji": "🎟️",
+        "tags": []
+    },
+    {
+        "name": "GOAT",
+        "address": "581XaxPQ7jGqqFGh3RQhK8wESBrEvFCAry7EDq2NzacH",
+        "emoji": "👰🏾‍♀️",
+        "tags": []
+    },
+    {
+        "name": "Smart10",
+        "address": "8RTDA7rQadKhCGyWdzxqhD5pm3mXg9MjmAGxn8BZ1S6C",
+        "emoji": "😃",
+        "tags": []
+    },
+    {
+        "name": "GAKE",
+        "address": "DNfuF1L62WWyW3pNakVkyGGFzVVhj4Yr52jSmdTyeBHm",
+        "emoji": "🧍🏿‍♀",
+        "tags": []
+    },
+    {
+        "name": "TheVoice",
+        "address": "DSVc1Rd69sLcXBoZAsvkzK4jGFyJKP77K3J2CaFVNAFP",
+        "emoji": "♿",
+        "tags": []
+    },
+    {
+        "name": "MATL",
+        "address": "4hSXPtxZgXFpo6Vxq9yqxNjcBoqWN3VoaPJWonUtupzD",
+        "emoji": "🤛🏼",
+        "tags": []
+    },
+    {
+        "name": "Mitch",
+        "address": "4Be9CvxqHW6BYiRAxW9Q3xu1ycTMWaL5z8NX4HR3ha7t",
+        "emoji": "🤘🏽",
+        "tags": []
+    },
+    {
+        "name": "Yenni",
+        "address": "5B52w1ZW9tuwUduueP5J7HXz5AcGfruGoX6YoAudvyxG",
+        "emoji": "✋🏽",
+        "tags": []
+    },
+    {
+        "name": "StickTest",
+        "address": "BpycpQ7STrD8d73kjui5nzJmp7EBAgSmFfV8zeqMMX5z",
+        "emoji": "🦹🏿",
+        "tags": []
+    },
+    {
+        "name": "Daumun",
+        "address": "8MaVa9kdt3NW4Q5HyNAm1X5LbR8PQRVDc1W8NMVK88D5",
+        "emoji": "🚴🏼‍♀️",
+        "tags": []
+    },
+    {
+        "name": "-$ Glitch",
+        "address": "D18EmaqFyXJ35GA9XP41qecF72JsyJNo6ZtrTDfi5xGH",
+        "emoji": "🚣🏼‍♂️",
+        "tags": []
+    },
+    {
+        "name": "Trench",
+        "address": "2byqB8Pypvq6s8W126yJc9SxToTiWTfNFuDU3ZTq9CLT",
+        "emoji": "🏌🏻‍♀",
+        "tags": []
+    },
+    {
+        "name": "POW",
+        "address": "CWvdyvKHEu8Z6QqGraJT3sLPyp9bJfFhoXcxUYRKC8ou",
+        "emoji": "⛹🏿‍♂️",
+        "tags": []
+    },
+    {
+        "name": "SolShotta",
+        "address": "dVs7zZksjFuq73xbtUC62brFXYYuxCuPSG4wZeGiHck",
+        "emoji": "🚹",
+        "tags": []
+    },
+    {
+        "name": "Gm6",
+        "address": "HXkaN7TAQYXsybY1UHLrn18cVa9jgM3mbReasbAoSjTv",
+        "emoji": "🏃🏼‍♂️",
+        "tags": []
+    },
+    {
+        "name": "0xSun",
+        "address": "HUpPyLU8KWisCAr3mzWy2FKT6uuxQ2qGgJQxyTpDoes5",
+        "emoji": "🧍‍♀️",
+        "tags": []
+    },
+    {
+        "name": "Gm5",
+        "address": "Hnnw2hAgPgGiFKouRWvM3fSk3HnYgRv4Xq1PjUEBEuWM",
+        "emoji": "😴",
+        "tags": []
+    },
+    {
+        "name": "-$ Gm3",
+        "address": "5mtbmPwj2SMkxPP9c93s9oD9bmMdByTqepNarM9Y7u7e",
+        "emoji": "🫱🏼‍🫲🏿",
+        "tags": []
+    },
+    {
+        "name": "@traderpow",
+        "address": "8zFZHuSRuDpuAR7J6FzwyF3vKNx4CVW3DFHJerQhc7Zd",
+        "emoji": "🦏",
+        "tags": [
+            "Highcap Holder"
+        ]
+    },
+    {
+        "name": "@NachSOL",
+        "address": "4aDdi3EiDPMbeZ3e5BvbFMt4vfJaoahaHxZuwKQRtFc1",
+        "emoji": "🍪",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "@kimchi1x",
+        "address": "4M8QVddY7Ld8eAaHoYcWKPxQcwxVuZsXMFKsm8921Uzd",
+        "emoji": "🍜",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "@Stxticcss",
+        "address": "4XMPyWFsYdNcCN4FG8geyytyTeUNacn4QundBzMqbGGT",
+        "emoji": "🐕‍🦺",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "-$ Mr. Frog",
+        "address": "4DdrfiDHpmx55i4SPssxVzS9ZaKLb8qr45NKY9Er9nNh",
+        "emoji": "🐸",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "INSIDER1",
+        "address": "9Fbu5z3jLSVPGKSpFJ2LZgaPYKey43fREimG5ZrNyR8w",
+        "emoji": "🕵️‍♂️",
+        "tags": [
+            "Highcap Holder"
+        ]
+    },
+    {
+        "name": "HIGH WINRATE",
+        "address": "7DKdBojSuUwAAJFk1wFX56cggpSwYssVogTiVkriqkjv",
+        "emoji": "💹",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "Cupseyy 87%",
+        "address": "ASgit1viCcskiYtTtyNs8dPS31mr4VgU9efRDMp3FMQH",
+        "emoji": "🏆",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "90%WIN 2",
+        "address": "DfMxre4cKmvogbLrPigxmibVTTQDuzjdXojWzjCXXhzj",
+        "emoji": "💪",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "SOLSHOOTA",
+        "address": "NFJKkZ7yeoAvfHLWNiqAw6CYKWnVAVAQu5PE3AC3qYt",
+        "emoji": "🔫",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "HS Secondary",
+        "address": "4yc51C6KGirDBLjpymMr7rzYuM2wNd2TxXC2rArSPBES",
+        "emoji": "📈",
+        "tags": []
+    },
+    {
+        "name": "orang",
+        "address": "4zq1iLpmepj2Rj7W6A3XQMRQA1HyjYqVpZiBzM6aPyH7",
+        "emoji": "🍊",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "INSYDERCRYPTO",
+        "address": "2NrrLM4TM4G5Qz3VXhQXMLFfA6KU76kS61iteBRkbmCR",
+        "emoji": "🔍",
+        "tags": []
+    },
+    {
+        "name": "BERTIE DEV",
+        "address": "5CGEXBgHHhqJ7GHYooedLV4nSpAjphnhePyMccvjYgT1",
+        "emoji": "👨‍💻",
+        "tags": []
+    },
+    {
+        "name": "YOGURT1",
+        "address": "DKwybycDSWidrHfpMjaahUsT1Yid3kig86ncXPAGe7AU",
+        "emoji": "🥛",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "meechie80%",
+        "address": "831qmkeGhfL8YpcXuhrug6nHj1YdK3aXMDQUCo85Auh1",
+        "emoji": "🤓",
+        "tags": []
+    },
+    {
+        "name": "MEZOTERIC",
+        "address": "EdDCRfDDeiiDXdntrP59abH4DXHFNU48zpMPYisDMjA7",
+        "emoji": "🔮",
+        "tags": []
+    },
+    {
+        "name": "YELO",
+        "address": "EY5udSh8BjxKq3zqKJVtNgRWr1jWkcJtCrHCvAoBLmRW",
+        "emoji": "🌞",
+        "tags": []
+    },
+    {
+        "name": "SYDNEY✊",
+        "address": "3Ve46xYmZTKExr3FmCLYMA5Xt12DkDKgK7AeNUhcc5cc",
+        "emoji": "🏙️",
+        "tags": []
+    },
+    {
+        "name": "goatse",
+        "address": "GzNus5Ka6kjJrqKCJRHmEVLiAS3HJ9RrBp1mdnxqGXTb",
+        "emoji": "🐐",
+        "tags": []
+    },
+    {
+        "name": "GIBBY/MOODENG",
+        "address": "G1pRtSyKuWSjTqRDcazzKBDzqEF96i1xSURpiXj3yFcc",
+        "emoji": "🎭",
+        "tags": []
+    },
+    {
+        "name": "alvin/patty",
+        "address": "RFSqPtn1JfavGiUD4HJsZyYXvZsycxf31hnYfbyG6iB",
+        "emoji": "🐿️",
+        "tags": []
+    },
+    {
+        "name": "good trader1",
+        "address": "FqL2yC57E833Qnc3TfEJw45gCQcxwPxrQvpAu4Cg2Tjr",
+        "emoji": "📈",
+        "tags": []
+    },
+    {
+        "name": "xander",
+        "address": "GPowjEv4Hm84z2nbE7xsFwwBFDNouvqo8SbhzvKXg5xo",
+        "emoji": "👦",
+        "tags": []
+    },
+    {
+        "name": "ferb2",
+        "address": "9ru9BSVFSUqSRQFwdjjnkzQGf9yUdpRTjpjXPKc4BvxX",
+        "emoji": "👓",
+        "tags": []
+    },
+    {
+        "name": "mrpunk",
+        "address": "AonDkSa2EZ19U365YrY3bKLDbLf7cU1herGFTGxXYrcm",
+        "emoji": "🤘",
+        "tags": []
+    },
+    {
+        "name": "frostyjayys",
+        "address": "HtucFepgUkMpHdrYsxMqjBNN6qVBdjmFaLZneNXopuJm",
+        "emoji": "❄️",
+        "tags": []
+    },
+    {
+        "name": "good trader2 (ACC/MEME)",
+        "address": "6MYUmuATQYZYXXHq5LgM9WjUrh7zFyxmT4364MhMD2VH",
+        "emoji": "📊",
+        "tags": []
+    },
+    {
+        "name": "andrew tate",
+        "address": "4jRX4iW2F5wBnfYMyB7RjS2PU5MjXrST3fB9DoV4BjHa",
+        "emoji": "👔",
+        "tags": []
+    },
+    {
+        "name": "minecraft test dev",
+        "address": "DN8yBqchiqzmnJb15g6VgZnEhcdzuuJkLhyChxD3e87s",
+        "emoji": "🎮",
+        "tags": []
+    },
+    {
+        "name": "ANSEM?",
+        "address": "AVAZvHLR2PcWpDf8BXY4rVxNHYRBytycHkcB5z5QNXYm",
+        "emoji": "🧐",
+        "tags": []
+    },
+    {
+        "name": "LUCEtrader",
+        "address": "FdvYZ99wuATUdd6fuSqyAMJRoGLrcHivnuWHxgst475p",
+        "emoji": "💡",
+        "tags": []
+    },
+    {
+        "name": "Orangie NEW",
+        "address": "CpoC3hUDGDnEdSZF7egZTddgnKUeXVnoPJTNDUaM98GC",
+        "emoji": "🍊",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "cheffin 1-1000sol",
+        "address": "678HPdYtXFDNW6m1nCzLwwGX9FvePT41s8y7mRYGHNJC",
+        "emoji": "👨‍🍳",
+        "tags": []
+    },
+    {
+        "name": "RIPETH DEV",
+        "address": "AA21BSr7LZAdkyv7UF4EuMDnNEeczjmaDQWBa1rcVxH9",
+        "emoji": "🔨",
+        "tags": [
+            "dev"
+        ]
+    },
+    {
+        "name": "RIPETH SECONDARY?",
+        "address": "EF58UCMLL7pWM9BSgZbc3Jfa6Gc16Yu5T37sVDxoRRhb",
+        "emoji": "🔄",
+        "tags": []
+    },
+    {
+        "name": "pnut Trader",
+        "address": "HXkP2HJ3436u1urLnLsupqjtX1647bA2TtcHNWiDt49U",
+        "emoji": "🥜",
+        "tags": []
+    },
+    {
+        "name": "1M PnL",
+        "address": "BHCm58VsiSq9p3hqjprLAs6wtjXjtuGnz6vj1i3Upe7X",
+        "emoji": "💰",
+        "tags": []
+    },
+    {
+        "name": "pnut insider?",
+        "address": "FUCtc9NkQXWKFDJyA4Xjkvm1CdYNEnvTZkXpThNexnij",
+        "emoji": "📜",
+        "tags": []
+    },
+    {
+        "name": "good trader pnut",
+        "address": "Avc4fcAvrXRNnoEjwRVgM61EjwKX6smdPspGQjeRWLV1",
+        "emoji": "📈",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "SOLSHOTTA",
+        "address": "Fxj1j5ohVoRos1yQnvx6bsvYCt493VGpyLbMiq4eLff3",
+        "emoji": "🎯",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "deepfates",
+        "address": "4PhdccRaRMHGR8RAJk6CGmZjNoke6jsM6N9pJ7yCF1mr",
+        "emoji": "🔮",
+        "tags": []
+    },
+    {
+        "name": "SOLSHOTTA 2?",
+        "address": "2m5498hY3hpSvm1pVyZwwyU6bpQGFGu3PADSoEoZFXQB",
+        "emoji": "🎯",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "latuche",
+        "address": "GJA1HEbxGnqBhBifH9uQauzXSB53to5rhDrzmKxhSU65",
+        "emoji": "💼",
+        "tags": []
+    },
+    {
+        "name": "quant",
+        "address": "FpCgGwrowtdTM8hhHtP3o2shRJqThpnodEk3JG1bkPfx",
+        "emoji": "📊",
+        "tags": []
+    },
+    {
+        "name": "safz",
+        "address": "91jYvzhvCK9mYycVHFeiRaYvHxuzw59VUdC3QPCn4Thf",
+        "emoji": "🛡️",
+        "tags": []
+    },
+    {
+        "name": "SCOOTER",
+        "address": "FvTBarKFhrnhL9Q55bSJnMmAdXisayUb5u96eLejhMF9",
+        "emoji": "🛴",
+        "tags": []
+    },
+    {
+        "name": "TOP PNUT",
+        "address": "GmM5UFm8xu6TnZD7avwYcQ1zq25hD5yvHfYyAksHu9vB",
+        "emoji": "🥇",
+        "tags": []
+    },
+    {
+        "name": "500kPnut",
+        "address": "4bdY7XB6ZtpTFtLwN1zmJEV9Qdo4KvqYqWzaT8jkbjvb",
+        "emoji": "💵",
+        "tags": []
+    },
+    {
+        "name": "Blossom",
+        "address": "62FZUSWPMX9pofoV1uWHMdzFJRjwMa1LHgh2zhdEB7Zj",
+        "emoji": "🌸",
+        "tags": []
+    },
+    {
+        "name": "Casino",
+        "address": "8rvAsDKeAcEjEkiZMug9k8v1y8mW6gQQiMobd89Uy7qR",
+        "emoji": "🎲",
+        "tags": []
+    },
+    {
+        "name": "HNNY",
+        "address": "C2n9iEKWntCSVwcpEdjR2VkXYvfdwuXfVk4N9DNRF47c",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "Terp",
+        "address": "G2VzymsKt3zNAn4CKBndYcS67w6Kny5sDEp7Y2W1aTf6",
+        "emoji": "🎲",
+        "tags": []
+    },
+    {
+        "name": "good trader 3",
+        "address": "CrkK539YNKbsCRWYnH5oEs8Nnn66BjgkdvFEZ8mQ58gk",
+        "emoji": "👋",
+        "tags": []
+    },
+    {
+        "name": "Truth Of Terninal",
+        "address": "oYYe854PaZtEgEoGb2QZN3MTfrGU1GQQHqqQZFQuV3K",
+        "emoji": "😀",
+        "tags": [
+            "AI"
+        ]
+    },
+    {
+        "name": "RAYDIUM",
+        "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
+        "emoji": "💦",
+        "tags": []
+    },
+    {
+        "name": "BINANCE",
+        "address": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+        "emoji": "🏦",
+        "tags": [
+            "exchange"
+        ]
+    },
+    {
+        "name": "Bitget",
+        "address": "A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR",
+        "emoji": "🏦",
+        "tags": [
+            "exchange"
+        ]
+    },
+    {
+        "name": "MEXC",
+        "address": "5PAhQiYdLBd6SVdjzBQDxUAEFyDdF5ExNPQfcscnPRj5",
+        "emoji": "🏦",
+        "tags": [
+            "exchange"
+        ]
+    },
+    {
+        "name": "400K PNL",
+        "address": "BieeZkdnBAgNYknzo3RH2vku7FcPkFZMZmRJANh2TpW",
+        "emoji": "💸",
+        "tags": []
+    },
+    {
+        "name": "good trader 4 (500kpnl)",
+        "address": "8fSnLTnRViK83dDesivTsPx2wiRhwti9xoafeMGjEyLJ",
+        "emoji": "💰️",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "Truth Of Terminal 2",
+        "address": "rgPyefcNqJCsJj1wrWhdQqHVphVWFXLqU5wtiFStBEN",
+        "emoji": "😀",
+        "tags": [
+            "AI"
+        ]
+    },
+    {
+        "name": "+1M PNL 65%",
+        "address": "ve94tFcRnLnwMGf7e5mUXMyAkzzcS4qkzSKZGsQV4kk",
+        "emoji": "💹",
+        "tags": []
+    },
+    {
+        "name": "700k pnl",
+        "address": "68TWGYLqKqDPtt8cWQ3bvSi3WsmF7oJj7R9g3F8fce2j",
+        "emoji": "⚖️",
+        "tags": []
+    },
+    {
+        "name": "profit 1,5M PNL",
+        "address": "BrNoqdHUCcv9yTncnZeSjSov8kqhpmzv1nAiPbq1M95H ",
+        "emoji": "🦞",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "MR.THANKYOU",
+        "address": "2bfnXiF9Gxc2U4qoxXYtPDuUkmZWsuLLqTf9P3fVEpHi",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "ACT I DEV",
+        "address": "6P2XrFUBfm6qGSadmopSMovtqNDN5hWj3JJ3bqjaL2NP",
+        "emoji": "🛠️",
+        "tags": [
+            "dev"
+        ]
+    },
+    {
+        "name": "pnut dev",
+        "address": "HrHJputHcA8mkwrcQB3GkrJ2u1f7Fm4LzAZptSYSsUcf",
+        "emoji": "🛠️",
+        "tags": [
+            "dev"
+        ]
+    },
+    {
+        "name": "ORACLE WALLET",
+        "address": "DFtmuiWKNX4x3UTM2TeWGmrVTD4XqJgE7iSoxVwwLvxJ",
+        "emoji": "😀",
+        "tags": [
+            "AI"
+        ]
+    },
+    {
+        "name": "Oracle dev",
+        "address": "thor35EFFJS6xWHxthH5YUgNLxzcCrCKufHDg3GE67H",
+        "emoji": "🛠️",
+        "tags": [
+            "dev",
+            "AI"
+        ]
+    },
+    {
+        "name": "TrashArt DEV",
+        "address": "EDhiCmwKF9ceofB2kM2QLusY7i4ewKWq3665NxXmbKVQ",
+        "emoji": "🛠️",
+        "tags": [
+            "dev"
+        ]
+    },
+    {
+        "name": "good trader 5",
+        "address": "4bKTFx7TKDfFFk5H4M9S1aTuV2aLuDBofHVvMEGcegKG",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "MR HAT WALLET",
+        "address": "HpqYXW5FF1nSjn6oyATEusDoY3bb6MuPaKtFYV6rX1aQ",
+        "emoji": "😀",
+        "tags": [
+            "AI"
+        ]
+    },
+    {
+        "name": "LITECOIN INSIDER?",
+        "address": "3dNTS4e2pwtQsTLgdKNm3p6vVijAfM6c57EajDY4zrpt",
+        "emoji": "👥",
+        "tags": []
+    },
+    {
+        "name": "Litecoin2?",
+        "address": "Hbod3y29PUnpUxGT8zfWAB994JESwhSc5wasFqUgg2tD",
+        "emoji": "👥",
+        "tags": []
+    },
+    {
+        "name": "good trader 6",
+        "address": "8uDfUvwik5PxdUPsQ6J7anyhChXLx8hQYNoRsusox9XB",
+        "emoji": "🤑",
+        "tags": []
+    },
+    {
+        "name": "NACH NEW",
+        "address": "4aDdi3EiDPMbeZ3e5BvbFMt4vfJaoahaHxZuwKQRtFc1 ",
+        "emoji": "⭐️",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "Polar",
+        "address": "GTvBQnRvAPweU2qmYg8MDLND2PAAyYFKe35aKQGMRDaL ",
+        "emoji": "❄️",
+        "tags": []
+    },
+    {
+        "name": "Tristan TATE",
+        "address": "BYhH8QatT4Aue5TxLCiYeHBcZ2ufr6KCwdQPQnedVewy",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "IGGY AZZALEA",
+        "address": "CfyPKSXiFRLnq8cKrefgHKEFjFunwFMDZootqdbeZdfE",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "HOLDER 700K",
+        "address": "7VBTpiiEjkwRbRGHJFUz6o5fWuhPFtAmy8JGhNqwHNnn",
+        "emoji": "💎",
+        "tags": []
+    },
+    {
+        "name": "RED",
+        "address": "7ABz8qEFZTHPkovMDsmQkm64DZWN5wRtU7LEtD2ShkQ6",
+        "emoji": "❤️",
+        "tags": []
+    },
+    {
+        "name": "3M PNL",
+        "address": "9UWZFoiCHeYRLmzmDJhdMrP7wgrTw7DMSpPiT2eHgJHe",
+        "emoji": "💲",
+        "tags": [
+            "top"
+        ]
+    },
+    {
+        "name": "gkitad",
+        "address": "9R2UJG1Wyoo5V376TKkHcp98hrKEQhmGMmx8jVtRLJoz",
+        "emoji": "🤏",
+        "tags": []
+    },
+    {
+        "name": "TJR Trading",
+        "address": "EhQ7iJNjXFiajR5zwJmXoKo5faQc2X2JHtFx7zWJKTaV",
+        "emoji": "📸",
+        "tags": []
+    },
+    {
+        "name": "TERP NEW",
+        "address": "HkFt55P3PhRWHXoTFeuvkKEE4ab26xZ1bk6UmXV88Pwz",
+        "emoji": "🤓",
+        "tags": []
+    },
+    {
+        "name": "Faze Lacy",
+        "address": "9nJ72hhtwyGHoUbEN3xfGuiLnrX3SnLYX52hkoahn2YH",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "FaZe Banks",
+        "address": "CkxVhktjqYuhsVfNQzqEZkwQ2gMU1wEFPM3FSSVXGjM9",
+        "emoji": "💸",
+        "tags": []
+    },
+    {
+        "name": "QUANT DEV",
+        "address": "Fi2hrxExy6TJnKcbPtQpo6iZzX9SUVbB9mDw6d29NgCn",
+        "emoji": "🛠️",
+        "tags": [
+            "dev"
+        ]
+    },
+    {
+        "name": "ANDREW TATE",
+        "address": "D3Z7weHeLGWA7eg1qwVB66NCs8YLxiDTBVE6Eb1tTmwg",
+        "emoji": "💪",
+        "tags": []
+    },
+    {
+        "name": "mim",
+        "address": "28ipXVfkdmu1PDowCHbcSfzkpH9edZmSiVoDhY5xGVfR",
+        "emoji": "👩‍🦳",
+        "tags": []
+    },
+    {
+        "name": "Justice Top",
+        "address": "FXobn8QbTmzHeHu5GPWjDR31jh8HCW7TsqrczF8v7cKA",
+        "emoji": "🤠",
+        "tags": []
+    },
+    {
+        "name": "500k pnl",
+        "address": "5YkZmuaLhrPjFv4vtYE2mcR6J4JEXG1EARGh8YYFo8s4",
+        "emoji": "💦",
+        "tags": []
+    },
+    {
+        "name": "good trader 10",
+        "address": "9E7FsmrFHgkSTXc2Dx9FMkzMHoeFspziruFdNTBSeAG7",
+        "emoji": "💋",
+        "tags": []
+    },
+    {
+        "name": "$$$RATMAN$$$",
+        "address": "JDd3hy3gQn2V982mi1zqhNqUw1GfV2UL6g76STojCJPN",
+        "emoji": "⛑️",
+        "tags": []
+    },
+    {
+        "name": "Sabby",
+        "address": "9K18MstUaXmSFSBoa9qDTqWTnYhTZqdgEhuKRTVRgh6g",
+        "emoji": "😎",
+        "tags": []
+    },
+    {
+        "name": "Dior",
+        "address": "D2wBctC1K2mEtA17i8ZfdEubkiksiAH2j8F7ri3ec71V",
+        "emoji": "💛",
+        "tags": []
+    },
+    {
+        "name": "Shocked",
+        "address": "4Bq5yvgoiZDsukGERb7aM52jDmbVPCpoihbztscZ5PeM",
+        "emoji": "⚡️",
+        "tags": []
+    },
+    {
+        "name": "MoneyMaykah",
+        "address": "2CXbN6nuTTb4vCrtYM89SfQHMMKGPAW4mvFe6Ht4Yo6z",
+        "emoji": "🐵",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "Lyxe",
+        "address": "HLv6yCEpgjQV9PcKsvJpem8ESyULTyh9HjHn9CtqSek1",
+        "emoji": "🛡️",
+        "tags": []
+    },
+    {
+        "name": "Alan",
+        "address": "2AtFkEamLgK9ByuFX5XmG7WHZ9CVLFC6pxhWpfYkL1KZ",
+        "emoji": "📝",
+        "tags": []
+    },
+    {
+        "name": "orca",
+        "address": "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+        "emoji": "🐳",
+        "tags": []
+    },
+    {
+        "name": "DUMBASS",
+        "address": "HWTVoxH2HaknzqanZXRxPa2L5tUkVixiLn5ZxTMtWU9N",
+        "emoji": "⛔️",
+        "tags": []
+    },
+    {
+        "name": "Scooter",
+        "address": "iWinRYGEWcaFFqWfgjh28jnqWL72XUMmUfhADpTQaRL",
+        "emoji": "🛴",
+        "tags": []
+    },
+    {
+        "name": "Orangie DEC",
+        "address": "26kZ9rg8Y5pd4j1tdT4cbT8BQRu5uDbXkaVs3L5QasHy ",
+        "emoji": "🍊",
+        "tags": []
+    },
+    {
+        "name": "-$ WOMPMAN",
+        "address": "6GXx6V1zBaLTWkTQxYDwggcw4JzDtA6h4iqsR9NxdtbW",
+        "emoji": "😱",
+        "tags": []
+    },
+    {
+        "name": "JB1",
+        "address": "FkhvSPvRWYAYKF7yoC6rCKJG5RcyMgBAx7bxEfqS7F5t",
+        "emoji": "😀",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "JB2",
+        "address": "CJyiZ25kUkZLNjZMDNBgq6zk6FtiewEMgfmhvoKff7kG",
+        "emoji": "😀",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "JB3",
+        "address": "648xm26BoU87FKDCMAXBiBLSBfPuwKdimq1ikisiyWgy",
+        "emoji": "😀",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "3SOL STRAT",
+        "address": "3b7HqD1YAFgXeqqYmSaMU6tMr2DLMWZXZb5NgajCjpre",
+        "emoji": "💰",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "TEST DEV",
+        "address": "QVxRBmHi4GYQQFs9v5rz9B69e9DpoU1P7CtogFPTs4c",
+        "emoji": "🔧",
+        "tags": [
+            "dev"
+        ]
+    },
+    {
+        "name": " GH0STEE Main",
+        "address": "5uBmGmr5MD1zPdv1oi7kZGo5BaWgC7pYTvHRt7891rxc",
+        "emoji": "💰️",
+        "tags": [
+            "Whale"
+        ]
+    },
+    {
+        "name": "GHOSTEE NEO",
+        "address": "H4pEJFNkRNuPSC74wafmnTvvwUzSdzcEpndRwp2cgwnu",
+        "emoji": "💰️",
+        "tags": [
+            "Whale"
+        ]
+    },
+    {
+        "name": "GHOSTEE Nova",
+        "address": "BD7oWkEQsUwE8sj4UT7jtrGjHC8Gq1iRqXY7U6DTbJpf",
+        "emoji": "💰️",
+        "tags": [
+            "Whale"
+        ]
+    },
+    {
+        "name": "Dutch",
+        "address": "9vWutdTBs66hWkeCmxaLFpkKy4q5RSe8DsFjfdxj5yFA",
+        "emoji": "😀",
+        "tags": [
+            "Whale"
+        ]
+    },
+    {
+        "name": "Catolic ",
+        "address": "2HWT2KLLdN2wxYTqdSuko5SBzg2SEJASgV4GE2tD7TML",
+        "emoji": "😀",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "Jugg ",
+        "address": "6RoLbZJWJHpTk4sdPsWzocEHiRtzPS36WcBjnMXuQrfU",
+        "emoji": "😀",
+        "tags": [
+            "Whale"
+        ]
+    },
+    {
+        "name": "jaydennfnf",
+        "address": "3h65MmPZksoKKyEpEjnWU2Yk2iYT5oZDNitGy5cTaxoE",
+        "emoji": "😀",
+        "tags": [
+            "Whale"
+        ]
+    },
+    {
+        "name": "jaydennfnf2 ",
+        "address": "Gr34KrdUAQvH5Hz3VYpa2BiZLx9N4MDLccE4ksaHPubp",
+        "emoji": "😀",
+        "tags": [
+            "Whale"
+        ]
+    },
+    {
+        "name": "mostache ",
+        "address": "2RssnB7hcrnBEx55hXMKT1E7gN27g9ecQFbbCc5Zjajq",
+        "emoji": "😀",
+        "tags": [
+            "Whale"
+        ]
+    },
+    {
+        "name": "SerpentsGame ",
+        "address": "5jMW1hzAKZSYbLvpHf6UviQ8PoSMmdh8LY8ZYPyb94ve",
+        "emoji": "💥",
+        "tags": [
+            "A+"
+        ]
+    },
+    {
+        "name": "Smart guy",
+        "address": "3zME3DRRKxWZTD5mCdSKDu7xSAMqvxfTFwJp5CpqmTn7",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "hmmmmmm",
+        "address": "CVhjqgB4whNLtsFG228mDvWsmvAhaNszpcuC5jpkkqPy",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "Skid",
+        "address": "HPkQu4osTzt3reYjYX8CHufGCGgHesc7PqG6WdhcY4p9",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "#Bastille",
+        "address": "3kebnKw7cPdSkLRfiMEALyZJGZ4wdiSRvmoN4rD1yPzV",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "60%",
+        "address": "EyY2fcGfiDtTatycqxFeX6NM6xrqCrpq6vNg7j1EEdWs",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "90%",
+        "address": "BDDUuDLzoRW3opPsRaa7YS7dA9mvdrQ6cxavSJKtKSBZ",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "70%",
+        "address": "J485YzQjuJPLYoFEYjrjxd7NAoLHTiyUU63JwK7kLxRr",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "Profit",
+        "address": "DiY6MGrxVNokCZxH3PLzxJjyauQXK567StxotTFwjB2g",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "Profit",
+        "address": "29uXvzTRGeWfxhAGigXeYMJGdreu8tV8LmSNRYkm4P1b",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "70%",
+        "address": "DAqQYit1zmuzt5CfUa18j77pzDGQi5czYoHcmhc2shNY",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "$GT",
+        "address": "D75CvmWwahbzJExTDaRNvPJzpy7n93Cc3QggZnAgKRcK",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "$GT",
+        "address": "D3WhuJitQGWfFSEeyypF6VPY9oae5j1mi1z7ZdZxr9W3",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "$TT",
+        "address": "H18Tn4QPYaYmvQ4ck6VjDeR6wNAXHNsBcMTmu1nrshvz",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "WATCH",
+        "address": "6zbwWUv6ysos73PbxtC7ewpz3ECeDndWF9BGhFpA3CYm",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "COOL GUY",
+        "address": "ETg3sgCM1Hmikf5J62UUcQUZxQoijmXGP23eoxJitVv4",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "THE MAN",
+        "address": "41vRncq4mkPJmBzzE9vxmhYMFwJWyAaEYZsLGiStV6e7",
+        "emoji": "😀",
+        "tags": []
+    },
+    {
+        "name": "Baller",
+        "address": "Hkp22XxZ8xwk93eoYrhduTRkp5aaG4tvfhsqhbADfinS",
+        "emoji": "😀",
+        "tags": []
+    }
+]
