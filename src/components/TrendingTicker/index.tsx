@@ -15,7 +15,7 @@ export default function TrendingTicker(props: any) {
   const [data, setdata] = useState<any>([]);
 
   const trendingApi2 = async () => {
-    getTrending().then((res) => {
+    getTrending(0).then((res) => {
       res = res.slice(0, 20);
       setdata(res);
     });

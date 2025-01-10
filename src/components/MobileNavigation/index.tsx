@@ -36,7 +36,7 @@ export default function MobileNavigation() {
         window.open(bottomNavigationRoutes[newValue].path, '_self');
       }}
       classes={{
-        root: 'bottom_navigation',
+        root: 'bottom_navigation hidden',
       }}
       sx={themeMobileBar.bottomNavigationAction}
     >

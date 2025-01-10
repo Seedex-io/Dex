@@ -81,7 +81,7 @@ const LoadingText = styled.div`
 export default function SmallLoading(props: any) {
   const { text } = props;
   return (
-    <>
+    <div className="bg-[#1a1a1a]">
       <LoadingWrapper>
         <div className="wave-fill">
           <div className="water">
@@ -91,6 +91,6 @@ export default function SmallLoading(props: any) {
         </div>
       </LoadingWrapper>
       <LoadingText className="wave-loading">{text}</LoadingText>
-    </>
+    </div>
   );
 }
