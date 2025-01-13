@@ -233,7 +233,7 @@ export default function TrendingPage(props: any) {
                   footerContainer: 'token_explorer_footer_container',
                 }}
                 onCellClick={(params) => {
-                  window.open(`/${params.row.pairHash}-ether`, '_self');
+                  window.open(`/${params.row.pairHash}-ethereum`, '_self');
                 }}
                 className="overflow-hidden"
               />
