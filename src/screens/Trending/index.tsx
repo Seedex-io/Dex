@@ -10,6 +10,7 @@ import themeNewPairs from './theme';
 import Filters from './filters';
 import WarningMessage from '../../components/WarningMsg';
 import Error from '../../components/error';
+import { getChainNameById } from '../../utils/chains';
 
 interface Token {
   chain: number;
