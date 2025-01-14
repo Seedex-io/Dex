@@ -8,12 +8,14 @@ import { at } from 'lodash';
 export const getInfo = async () => {
   const address = window.location.pathname.split('/')[1].split('-')[0];
   const chain = window.location.pathname.split('/')[1].split('-')[1];
-  const url = `${API}/info?address=${address}&chain=${chain}`;
+  const url = `${API}/get-info?address=${address}&chain=${chain}`;
 
   return axios
     .get(url)
     .then(async (res: any) => {
       const val = res.data.pair;
+
+      // Fetch publicInfo and honeypot data
       const publicInfo = await getPublicInfo(val.baseToken.address, chain);
       const honeypot = await scanHoneypot(val.pairAddress, chain);
 
@@ -22,16 +24,14 @@ export const getInfo = async () => {
         month: 'long',
         day: 'numeric'
       });
-      
-      return {
+
+      // Check if publicInfo and honeypot data exist
+      const hasPublicInfo = publicInfo && Object.keys(publicInfo).length > 0;
+      const hasHoneypotInfo = honeypot && honeypot.honeypotResult;
+
+      // Prepare the result object
+      const result = {
         ...val,
-        honeypot: {
-          BuyTax: honeypot.simulationResult.buyTax,
-          BuyGas: honeypot.simulationResult.buyGas,
-          SellTax: honeypot.simulationResult.sellTax,
-          SellGas: honeypot.simulationResult.sellGas,
-          isHoneypot: honeypot.honeypotResult.isHoneypot,
-        },
         favourite: false,
         chainId: val.chainId,
         dexId: val.dexId,
@@ -101,14 +101,27 @@ export const getInfo = async () => {
         reserve: val.liquidity.base,
         chain: 'ether',
         // logo: `https://dd.dexscreener.com/ds-data/tokens/ethereum/${val.baseToken.address.toLowerCase()}.png?size=lg`,
-        ...publicInfo,
+        // Only add publicInfo and honeypot if they are valid
+        ...(hasPublicInfo && publicInfo),
+        ...(hasHoneypotInfo && {
+          honeypot: {
+            BuyTax: honeypot.simulationResult.buyTax,
+            BuyGas: honeypot.simulationResult.buyGas,
+            SellTax: honeypot.simulationResult.sellTax,
+            SellGas: honeypot.simulationResult.sellGas,
+            isHoneypot: honeypot.honeypotResult.isHoneypot,
+          },
+        }),
       };
+
+      return result;
     })
     .catch((err: any) => {
       console.log(err);
       return null;
     });
 };
+
 
 export const getPublicInfo = async (tokenAddress: string, chain: string) => {
   const url = `${CAPI}/${chain}/contract/${tokenAddress}`;
