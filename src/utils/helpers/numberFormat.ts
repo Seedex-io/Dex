@@ -1,4 +1,5 @@
-const SMALLNUMBERS = {
+const SMALLNUMBERS: Record<string, string> = {
+  0: '₀',
   1: '₁',
   2: '₂',
   3: '₃',
@@ -91,21 +92,28 @@ export function shortNumber(number: any, decimal = 2) {
 }
 
 export default function formatNumberSmaller(number: any, afterDot = 3, removeNegativeSign = false) {
-  if (number === undefined || number === null || number === '' || number === 0) {
+  // Handle cases where the input is undefined, null, or an empty string
+  if (number === undefined || number === null || number === '') {
     return '-';
   }
-
+  
+  // Convert the input to a number (if it's not already a number)
   number = parseFloat(number);
+
+  // For numbers greater than or equal to 1, format to the specified precision
   if (number >= 1) {
     return parseFloat(number).toFixed(afterDot);
   }
 
+  // Handle numbers in scientific notation (e.g., `1.57e-10`) and very small values
   if (number.toString().indexOf('e') > -1 && number < 1) {
     number = number.toFixed(number.toString().split('e')[1] * -1);
   }
 
+  // Extract the fractional part of the number (everything after the decimal point)
   let numberStr: any = `${number}`.split('.')[1];
 
+  // If there's no fractional part or the first digit is not zero, format as a regular small number
   if (!numberStr || numberStr[0] !== '0') {
     let result = `${parseFloat(number).toFixed(afterDot)}`;
     if (removeNegativeSign) {
@@ -129,8 +137,12 @@ export default function formatNumberSmaller(number: any, afterDot = 3, removeNeg
     return `${parseFloat(number).toFixed(numberOfZero + afterDot)}`;
   }
 
-  // @ts-ignore
-  return `0.0${SMALLNUMBERS[numberOfZero]}${numberNoZero}`;
+  const subscriptZeros = `${numberOfZero}`
+    .split('') // Split the number into individual digits
+    .map((digit) => SMALLNUMBERS[digit]) // Map each digit to its subscript equivalent
+    .join(''); // Join the subscript characters
+
+  return `0.0${subscriptZeros}${numberNoZero}`;
 }
 
 // format timestamp to date string

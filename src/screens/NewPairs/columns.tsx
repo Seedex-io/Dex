@@ -4,7 +4,7 @@ import { TimeAgoCell } from '../../components/HelperComponents/TimeAgoCell';
 import { getChainLogo, getChainNameById } from '../../utils/chains';
 import CopyText from '../../components/CopyText';
 
-export const columns: GridColDef[] = [
+export const getColumns = (page: number): GridColDef[] => [
   {
     field: 'baseSymbol',
     headerName: 'TOKEN',
@@ -12,6 +12,9 @@ export const columns: GridColDef[] = [
     sortable: false,
     renderCell: (params: any) => (
       <div className="flex items-center space-x-2 text-white">
+        <span className='!font-mono text-[#7e7e8c] text-xs'>
+          #{params.api.getRowIndex(params.id) + 1 + page * 100}
+        </span>
         <div className="relative w-10 h-10">
           {/* Token logo */}
           <img

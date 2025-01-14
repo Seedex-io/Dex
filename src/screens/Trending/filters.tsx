@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Modal, Select, MenuItem } from '@mui/material';
 import Filtermodal from './filtermodal';
 import { getChainLogo } from '../../utils/chains';
+import { getTrending } from '../../api/tickerApi';
 
 interface DateRange {
     start: string | null;
@@ -35,7 +36,10 @@ interface FiltersProps {
     filters: FilterCriteria;
     onFilterChange: (key: keyof FilterCriteria, value: any) => void;
     onApply: () => void;
+    onTrendingTokensChange: (tokens: any[]) => void;
 }
+
+
 
 const chainOptions = [
     { id: 0, name: 'All Networks', getChainLogo: getChainLogo(0) },
@@ -67,8 +71,9 @@ const chainOptions = [
     { id: 34443, name: 'Mode', getChainLogo: getChainLogo(34443) } // Placeholder ID
 ];
 
-const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) => {
+const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply, onTrendingTokensChange }) => {
     const [open, setOpen] = useState(false);
+    const [timeframe, setTimeframe] = useState('24h');
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -76,6 +81,13 @@ const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) =
     const handleApplyFilters = () => {
         onApply();
         handleClose();
+    };
+
+    const handleTimeframeChange = async (newTimeframe: string) => {
+        setTimeframe(newTimeframe);
+        const chainId = filters.chainId !== null ? filters.chainId : 0;
+        const trendingTokens = await getTrending(chainId, newTimeframe, 0);
+        onTrendingTokensChange(trendingTokens);
     };
 
     useEffect(() => {
@@ -116,28 +128,32 @@ const Filters: React.FC<FiltersProps> = ({ filters, onFilterChange, onApply }) =
                                         <button
                                             type="button"
                                             className="inline-flex appearance-none items-center justify-center select-none relative whitespace-nowrap align-middle outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md transition-all h-6 min-w-6 text-xs px-2 bg-fuchsia-900 text-white font-semibold"
-                                            value="trending:m5"
+                                            value="5M"
+                                            onClick={() => handleTimeframeChange('5M')}
                                         >
                                             5M
                                         </button>
                                         <button
                                             type="button"
                                             className="inline-flex appearance-none items-center justify-center select-none relative whitespace-nowrap align-middle outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md transition-all h-6 min-w-6 text-xs px-2 bg-fuchsia-900 text-white font-semibold"
-                                            value="trending:h1"
+                                            value="1h"
+                                            onClick={() => handleTimeframeChange('24h')}
                                         >
                                             1H
                                         </button>
                                         <button
                                             type="button"
                                             className="inline-flex appearance-none items-center justify-center select-none relative whitespace-nowrap align-middle outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md transition-all h-6 min-w-6 text-xs px-2 bg-fuchsia-900 text-white font-semibold"
-                                            value="trending:h6"
+                                            value="6h"
+                                            onClick={() => handleTimeframeChange('24h')}
                                         >
                                             6H
                                         </button>
                                         <button
                                             type="button"
                                             className="inline-flex appearance-none items-center justify-center select-none relative whitespace-nowrap align-middle outline-2 outline-transparent outline-offset-2 leading-[1.2] rounded-md transition-all h-6 min-w-6 text-xs px-2 bg-fuchsia-900 text-white font-semibold"
-                                            value="trending:h24"
+                                            value="24h"
+                                            onClick={() => handleTimeframeChange('24h')}
                                         >
                                             24H
                                         </button>

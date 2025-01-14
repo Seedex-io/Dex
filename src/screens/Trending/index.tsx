@@ -200,7 +200,7 @@ export default function TrendingPage(props: any) {
       <div className={`${isNavbarOpen ? 'ml-56' : 'ml-[65px]'}`}>
         <SearchBar theme={theme} onChangeTheme={handleChangeTheme} />
         <div className="px-3 mt-3">
-          <Filters filters={tempFilters} onFilterChange={updateTempFilter} onApply={handleApplyFilters} />
+          <Filters filters={tempFilters} onFilterChange={updateTempFilter} onApply={handleApplyFilters} onTrendingTokensChange={setFilteredTokens} />
           <WarningMessage />
           <Div style={style} className="border-l-2 border-[#e867ea] rounded-[8px]" sx={themeNewPairs.container}>
             <div style={{ height: '1050px', overflowY: 'auto' }}>

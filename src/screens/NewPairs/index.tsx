@@ -3,7 +3,9 @@ import LeftNavbar from '../../components/LeftNavbar';
 import Div from '../../components/SimpleComponents/Div';
 import SearchBar from '../../components/SearchBar';
 import { DataGrid } from '@mui/x-data-grid';
-import { columns } from './columns';
+import Pagination from '@mui/material/Pagination';
+import PaginationItem from '@mui/material/PaginationItem';
+import { getColumns } from './columns';
 import { getNewPairs } from '../../api/tickerApi';
 import './style.css';
 import themeNewPairs from './theme';
@@ -43,6 +45,7 @@ interface Token {
 }
 
 interface FilterCriteria {
+  chainId: number | null;
   minVolume: number | null;
   maxVolume: number | null;
   minPrice: number | null;
@@ -64,17 +67,52 @@ interface FilterCriteria {
   maxTransactions: number | null;
 }
 
+function CustomPagination({ rowCount, currentPage, onPageChange }: any) {
+  const totalPages = Math.ceil(rowCount / 100); // Assuming 100 rows per page
+
+  return (
+    <Pagination
+      color="primary"
+      variant="outlined"
+      shape="rounded"
+      page={currentPage + 1} // 1-based index for UI
+      count={totalPages} // Total pages
+      onChange={(event, value) => onPageChange(value)} // Pass 1-based page index to handler
+      renderItem={(props) => <PaginationItem {...props} />}
+      siblingCount={1}
+      boundaryCount={1}
+      sx={{
+        "& .MuiPaginationItem-root": {
+          margin: "0 4px",
+          borderRadius: "8px",
+          backgroundColor: "rgba(232, 103, 234, 0.1)",
+          color: "#e867ea",
+          "&:hover": {
+            backgroundColor: "rgba(232, 103, 234, 0.2)",
+          },
+          "&.Mui-selected": {
+            backgroundColor: "#e867ea",
+            color: "#fff",
+            fontWeight: "bold",
+          },
+        },
+      }}
+    />
+  );
+}
+
 export default function NewPairs(props: any) {
   const { theme, mobile } = props;
   const [style, setStyle] = useState<any>({});
   const [tokens, setTokens] = useState<Token[]>([]);
   const [filteredTokens, setFilteredTokens] = useState<Token[]>([]);
   const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
-  const [page, setPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(20); // Set initial page size
+  const [page, setPage] = useState<number>(0);
+  const [pageSize, setPageSize] = useState<number | undefined>(100); // Set initial page size to undefined
   const [loading, setLoading] = useState<boolean>(false);
 
   const [tempFilters, setTempFilters] = useState<FilterCriteria>({
+    chainId: null,
     minVolume: null,
     maxVolume: null,
     minPrice: null,
@@ -99,14 +137,15 @@ export default function NewPairs(props: any) {
   const [filters, setFilters] = useState<FilterCriteria>(tempFilters);
 
   useEffect(() => {
-    fetchTokens(page);
-  }, [page]);
+    fetchTokens();
+  }, [filters.chainId, page]);
 
-  const fetchTokens = async (page: number) => {
+  const fetchTokens = async () => {
     setLoading(true);
-    const data = await getNewPairs(page);
-    setTokens((prevTokens) => [...prevTokens, ...data]);
-    setFilteredTokens((prevTokens) => [...prevTokens, ...data]);
+    const chainId = filters.chainId !== null ? filters.chainId : 0;
+    const data = await getNewPairs(chainId, page); // Fetch tokens for the specified page
+    setTokens(data); // Replace existing tokens with new tokens for the current page
+    setFilteredTokens(data); // Update filtered tokens
     setLoading(false);
   };
 
@@ -191,11 +230,7 @@ export default function NewPairs(props: any) {
   };
 
   const handlePageChange = (newPage: number) => {
-    setPage(newPage + 1); // Increment page number
-  };
-
-  const handlePageSizeChange = (newPageSize: number) => {
-    setPageSize(newPageSize);
+    setPage(newPage - 1); // Increment page number
   };
 
   return (
@@ -204,19 +239,17 @@ export default function NewPairs(props: any) {
       <div className={`${isNavbarOpen ? 'ml-56' : 'ml-[65px]'}`}>
         <SearchBar theme={theme} onChangeTheme={handleChangeTheme} />
         <div className="px-3 mt-3">
-          <Filters filters={tempFilters} onFilterChange={updateTempFilter} onApply={handleApplyFilters} />
+          <Filters filters={tempFilters} onFilterChange={updateTempFilter} onApply={handleApplyFilters} onNewPairsTokensChange={setFilteredTokens} />
           <WarningMessage />
           <Div style={style} className="border-l-2 border-[#e867ea] rounded-[8px]" sx={themeNewPairs.container}>
             <div style={{ height: '1050px', overflowY: 'auto' }}>
               <DataGrid
                 rows={filteredTokens}
-                columns={columns}
+                columns={getColumns(page)}
                 getRowId={(row: Token) => row.pairHash}
-                pageSize={pageSize}
+                pageSize={100}
                 pagination
                 paginationMode="server"
-                onPageChange={handlePageChange}
-                onPageSizeChange={handlePageSizeChange}
                 disableColumnMenu
                 headerHeight={40}
                 loading={loading}
@@ -230,7 +263,14 @@ export default function NewPairs(props: any) {
                     <span className="flex items-center justify-center h-full">
                       <Error />
                     </span>
-                  )
+                  ),
+                  Pagination: () => (
+                    <CustomPagination
+                      rowCount={7000}
+                      currentPage={page}
+                      onPageChange={(clickedPage: number) => handlePageChange(clickedPage)}
+                    />
+                  ),
                 }}
                 classes={{
                   columnHeader: 'flex items-center py-2 pl-3 pr-2 sm:py-3 border-r border-[rgb(74,42,80)]/40',
@@ -242,7 +282,7 @@ export default function NewPairs(props: any) {
                   root: 'token_explorer_table_root',
                   footerContainer: 'token_explorer_footer_container',
                 }}
-                onCellClick={(params) => {
+                onCellClick={(params: any) => {
                   window.open(`/${params.row.pairHash}-ether`, '_self');
                 }}
                 className="overflow-hidden"

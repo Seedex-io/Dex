@@ -147,6 +147,8 @@
 .token_explorer_footer_container {
   display: none;
   border: none !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .token_explorer_column_separator {
